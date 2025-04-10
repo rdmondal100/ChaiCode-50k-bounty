@@ -30,7 +30,7 @@ const HeroSection = () => {
 	};
 
 	return (
-		<section className='relative min-h-screen flex items-center justify-center px-4 md:px-6 bg-background overflow-hidden pt-24 mb-96'>
+		<section className='relative min-h-screen flex items-center justify-center px-4 md:px-6 bg-background overflow-hidden pt-24 py-10'>
 			{/* Glows */}
 			<motion.div
 				initial={{ opacity: 0 }}
@@ -133,7 +133,7 @@ const HeroSection = () => {
     }}
     className="aspect-video"
   >
-    <iframe className=" w-full h-full rounded-2xl" src="https://www.youtube.com/embed/W43v7ePnjAA" title="Launching our platform and courses | Chai Code" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe className=" w-full h-full rounded-2xl" src="https://www.youtube.com/embed/W43v7ePnjAA" title="Launching our platform and courses | Chai Code" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
   </motion.div>
 </motion.div>
 
