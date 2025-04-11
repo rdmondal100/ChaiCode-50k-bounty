@@ -28,7 +28,7 @@ const TweetLoveSection = () => {
 	}, []);
 
 	return (
-		<section className='pb-36 bg-background'>
+		<section className='pb-36 bg-background '>
 			<div className='mx-auto mt-20'>
 				<motion.div
 					className='flex flex-col items-center text-center font-Inter mb-12'
@@ -194,7 +194,7 @@ const TweetLoveSection = () => {
 						className='p-[2px] rounded-lg bg-gradient-to-r from-primary via-primary/80 to-complement group'
 					>
 						<button className='relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-foreground bg-secondary rounded-lg overflow-hidden shadow-lg focus:outline-none cursor-pointer w-full h-full group-hover:bg-primary '>
-							<span className='relative z-10'>Join Cohorts Live Classes</span>
+							<span className='relative z-10 font-Inter'>Join Cohorts Live Classes</span>
 						</button>
 					</motion.div>
 				</motion.div>
