@@ -1,9 +1,13 @@
 import { useEffect, useRef } from 'react'
 
 
-export const useOutsideClick = (callbaack) => {
+export const useOutsideClick = (callbaack,enabled=true) => {
+
 	const currentRef = useRef(null);
 	useEffect(() => {
+		if(!enabled){
+			return
+		}
 		const handleClick = (event) => {
 			console.log(currentRef);
 
@@ -21,7 +25,7 @@ export const useOutsideClick = (callbaack) => {
 		return () => {
 			document.removeEventListener("mousedown", handleClick);
 		};
-	}, [callbaack]);
+	}, [callbaack,enabled]);
 
 	return currentRef;
 };
