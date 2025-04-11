@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+/* @import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css"; */
+
 
 @custom-variant dark (&:is(.dark *));
 
@@ -45,6 +48,7 @@
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
+  --color-complement: var(--complement);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -72,7 +76,6 @@
 }
 
 :root {
-
 
   --radius: 0.5rem;
   --background: oklch(1 0 0);
@@ -106,12 +109,15 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.213 47.604);
+  --complement: oklch(0.75 0.2 72);
 }
 
 .dark {
+  
   --background: oklch(0.141 0.005 285.823);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.21 0.006 285.885);
+  --card:oklch(0.15 0.0041 49.25);
+  
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.21 0.006 285.885);
   --popover-foreground: oklch(0.985 0 0);
@@ -140,6 +146,8 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.646 0.222 41.116);
+  --complement: oklch(0.75 0.2 72);
+
 }
 
 
@@ -165,4 +173,37 @@
       0 2px 3px rgba(0, 0, 0, 0.04);
   }
   
+  #root{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  
+  .swiper-pagination{
+      position: absolute;
+       margin-top: 50px;
+  }
+  .swiper-pagination-bullet{
+    background-color: var(--muted-foreground)!important;
+  }
+  .swiper-pagination-bullet-active{
+    background-color: var(--primary)!important;
+  }
+
+  
+  /* Scrollbar styling */
+.custom-scrollbar::-webkit-scrollbar {
+  background-color: var(--muted);
+  width: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--muted-foreground);
+  border-radius: 9999px;
+  width: 8px;
+}
+
+
+
+
 }
