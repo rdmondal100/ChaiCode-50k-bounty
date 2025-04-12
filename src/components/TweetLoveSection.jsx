@@ -18,6 +18,7 @@ import { ArrowBigLeft, ArrowBigRight, TwitterIcon } from "lucide-react";
 import { Button } from "./ui/button.jsx";
 import { Tweet } from "react-tweet";
 import AnimatedWaveLine from "./AnimatedUnderLine.jsx";
+import RingWaveButton from "./RippleRingButton.jsx";
 
 const TweetLoveSection = () => {
 	const [tweetData, setTweetData] = useState([]);
@@ -191,11 +192,11 @@ const TweetLoveSection = () => {
 						}}
 						whileTap={{ scale: 0.95 }}
 						transition={{ duration: 0.3 }}
-						className='p-[2px] rounded-lg bg-gradient-to-r from-primary via-primary/80 to-complement group'
+						className='p-[2px] rounded-lg hover:bg-transparent bg-gradient-to-r from-primary via-primary/80 to-complement group'
 					>
-						<button className='relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-foreground bg-secondary rounded-lg overflow-hidden shadow-lg focus:outline-none cursor-pointer w-full h-full group-hover:bg-primary '>
+						<RingWaveButton className='relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-foreground bg-secondary rounded-lg overflow-hidden shadow-lg focus:outline-none cursor-pointer w-full h-full group-hover:bg-primary/5'>
 							<span className='relative z-10 font-Inter'>Join Cohorts Live Classes</span>
-						</button>
+						</RingWaveButton>
 					</motion.div>
 				</motion.div>
 			</div>

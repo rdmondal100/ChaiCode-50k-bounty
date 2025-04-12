@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import RingWaveButton from "./RippleRingButton";
 
 const HeroSection = () => {
 	const videoCard = useRef(null);
@@ -102,7 +103,8 @@ const HeroSection = () => {
 					animate='visible'
 					custom={3}
 				>
-					<motion.button
+					<RingWaveButton>
+					<motion.div
 						whileHover={{
 							scale: 1.05,
 							boxShadow: "0 0 15px rgba(241, 158, 24, 0.5)",
@@ -112,7 +114,9 @@ const HeroSection = () => {
 						className='relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-foreground bg-gradient-to-r from-primary to-complement rounded-lg overflow-hidden shadow-lg focus:outline-none cursor-pointer'
 					>
 						<span className='relative z-10'>Check All Live Cohorts</span>
-					</motion.button>
+					</motion.div>
+					</RingWaveButton>
+					
 				</motion.div>
 
 				{/* Embedded Video with Scroll-Based Scale */}

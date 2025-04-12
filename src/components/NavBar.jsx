@@ -6,6 +6,7 @@ import ToggleTheme from "./ToggleTheme";
 import { CHAICODE_CURRENT_THEME } from "@/lib/constant";
 import MobileNav from "./MobileNav";
 import { useOutsideClick } from "@/hooks/useClickOutside";
+import RingWaveButton from "./RippleRingButton";
 
 const navItems = ["Cohorts", "Udemy", "Docs", "Reviews"];
 
@@ -149,12 +150,13 @@ const NavBar = () => {
 							transition={{ duration: 0.1, ease: [0.4, 0, 0.2, 1] }}
 							className='rounded-md cursor-pointer'
 						>
-							<Button
+							<RingWaveButton
 								variant='outline'
-								className='rounded-md font-Inter text-foreground border-0 hover:bg-accent hover:text-accent-foreground transition bg-gradient-to-r from-primary to-complement mybox-shadow text-base sm:text-[12px] md:text-[16px] font-[500] cursor-pointer '
+								rippleSpred="1.5"
+								className='rounded-md font-Inter text-foreground border-0 hover:bg-accent hover:text-accent-foreground transition bg-gradient-to-r from-primary to-complement mybox-shadow text-base px-3 py-2 sm:text-[12px] md:text-[16px] font-[500] cursor-pointer '
 							>
 								Login
-							</Button>
+							</RingWaveButton>
 						</motion.div>
 
 						{/* Theme Toggle */}
