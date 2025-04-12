@@ -125,7 +125,7 @@ const NavBar = () => {
 													damping: 30,
 													mass: 0.8,
 												}}
-												className='absolute inset-0 top-6 border-primary w-auto border-b-3'
+												className='absolute inset-0 top-6 w-auto h-[2px]  bg-gradient-to-r from-transparent via-primary to-transparent'
 											></motion.span>
 										)}
 									</motion.div>
