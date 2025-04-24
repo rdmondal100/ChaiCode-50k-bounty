@@ -199,7 +199,38 @@ const TweetLoveSection = () => {
 				</motion.div>
 
 				{/* cta  */}
-				<div className=' cta w-full flex justify-center mt-18'></div>
+				<div className='cta w-full flex justify-center mt-18'>
+				<MotionRingWaveButton
+  whileTap={{ scale: 0.99 }}
+  whileHover={{ scale: 1.02 }}
+  transition={{
+    type: "spring",
+    stiffness: 200,
+    damping: 25,
+    mass: 0.8,
+  }}
+  rippleColor='border-foreground'
+  rippleSize={8}
+  className='relative inline-flex items-center justify-center px-6 py-7 text-base font-semibold font-Inter text-foreground bg-secondary rounded-lg overflow-hidden shadow-md focus:outline-none cursor-pointer transition-colors duration-300 ease-in-out hover:bg-gradient-to-r from-primary to-complement hover:text-background border group'
+>
+  {/* Smooth color transition */}
+  <motion.span
+    initial={{ opacity: 0 }}
+    whileHover={{ opacity: 0.1 }}
+    transition={{
+      duration: 0.4,
+      ease: "easeOut",
+    }}
+    className='absolute inset-0 bg-foreground z-0 rounded-lg pointer-events-none'
+  />
+
+  {/* Text transition */}
+  <span className='relative z-10 bg-clip-text bg-gradient-to-br from-primary to-complement text-transparent group-hover:text-foreground font-bold text-lg'>
+    Join Cohorts Live Classes
+  </span>
+</MotionRingWaveButton>
+
+				</div>
 			</div>
 		</section>
 	);
