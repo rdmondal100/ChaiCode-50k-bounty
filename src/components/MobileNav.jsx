@@ -20,7 +20,7 @@ const MobileNav = React.forwardRef(
 					damping: 40,
 					mass: 1
 				}}
-				className={`fixed bottom-0 z-50 left-0 right-0  bg-popover text-popover-foreground w-full h-[70vh] px-5 py-6 rounded-t-2xl mybox-shadow flex flex-col gap-6 backdrop-blur-xs ${className}`}
+				className={`fixed bottom-0 z-50 left-0 right-0  bg-popover text-popover-foreground w-full h-[70vh] px-5 py-6 rounded-t-2xl  flex flex-col gap-6 backdrop-blur-xs ${className}`}
 			>
 				{/* Close Button */}
 				<div className='flex justify-end'>

@@ -19,13 +19,15 @@ const NavBar = () => {
 		}
 	});
 
+	const MotionToggleTheme = motion.create(ToggleTheme)
+
 	const [hovered, setHovered] = useState(null);
 	const [isOpenMenu, setIsOpenMenu] = useState(false);
 	const [showNav, setShowNav] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
 
-	const mobileNav = useOutsideClick(() => setIsOpenMenu(false),isOpenMenu);
-	
+	const mobileNav = useOutsideClick(() => setIsOpenMenu(false), isOpenMenu);
+
 	// Theme toggle
 	useEffect(() => {
 		const html = document.documentElement;
@@ -60,12 +62,10 @@ const NavBar = () => {
 		animate: { opacity: 1, y: 0 },
 		whileHover: {
 			y: -2,
-			boxShadow: "0 8px 20px rgba(241, 158, 24, 0.25)",
 		},
 		whileTap: {
 			y: 1,
 			scale: 0.98,
-			boxShadow: "0 4px 12px rgba(241, 158, 24, 0.15)",
 		},
 	};
 
@@ -79,7 +79,7 @@ const NavBar = () => {
 	return (
 		<>
 			<motion.header
-				className={`px-4 py-3 text-foreground mybox-shadow bg-primary/0 backdrop-blur fixed z-30 w-full`}
+				className={`px-4 py-3 text-foreground shadow-md bg-primary/0 backdrop-blur fixed z-30 w-full`}
 				initial={{ opacity: 0, y: -20 }}
 				animate={{ opacity: showNav ? 1 : 0, y: showNav ? 0 : -20 }}
 				transition={{ duration: 0.5, ease: easeInOut }}
@@ -147,13 +147,15 @@ const NavBar = () => {
 							variants={buttonVariants}
 							whileHover='whileHover'
 							whileTap='whileTap'
-							transition={{ duration: 0.1, ease: [0.4, 0, 0.2, 1] }}
+							transition={{ duration: 0.1, ease:"easeInOut" }}
 							className='rounded-md cursor-pointer'
 						>
 							<RingWaveButton
-								variant='outline'
-								rippleSpred="1.5"
-								className='rounded-md font-Inter text-foreground border-0 hover:bg-accent hover:text-accent-foreground transition bg-gradient-to-r from-primary to-complement mybox-shadow text-base px-3 py-2 sm:text-[12px] md:text-[16px] font-[500] cursor-pointer '
+								variant='primary'
+								rippleColor='border-foreground'
+								rippleSpread={2.5}
+								rippleSize={7}
+								className='bg-primary text-foreground cursor-pointer font-Inter bg-gradient-to-r from-primary to-complement shadow-md text-base px-4 py-3 sm:text-[12px] md:text-[16px] font-[500] border-0 hover:bg-accent hover:text-accent-foreground  '
 							>
 								Login
 							</RingWaveButton>

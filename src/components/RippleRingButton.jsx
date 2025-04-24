@@ -1,66 +1,90 @@
+
+
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils"; 
 
-const RingWaveButton = React.forwardRef(({ rippleSpred, children, className, onClick, ...props }, ref) => {
-	const [ripples, setRipples] = useState([]);
+const RingWaveButton = React.forwardRef(
+  (
+    {
+      children,
+      className,
+      onClick,
+      rippleColor = "border-blue-500",
+      rippleSize = 12,
+      rippleSpread = 3,
+      rippleDuration = 0.6,
+      rippleCount = 2,
+      delayIncrement = 0.15,
+      variant = "default",
+      ...props
+    },
+    ref
+  ) => {
+    const [ripples, setRipples] = useState([]);
 
-	const handleClick = (e) => {
-		// Run ripple effect
-		const rect = e.currentTarget.getBoundingClientRect();
-		const x = e.clientX - rect.left;
-		const y = e.clientY - rect.top;
+    const handleClick = (e) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
-		const baseTime = Date.now();
+      const baseTime = Date.now();
 
-		const newRipples = [0, 1].map((i) => ({
-			id: baseTime + i,
-			x,
-			y,
-			delay: i * 0.15,
-		}));
+      const newRipples = Array.from({ length: rippleCount }).map((_, i) => ({
+        id: baseTime + i,
+        x,
+        y,
+        delay: i * delayIncrement,
+      }));
 
-		setRipples((prev) => [...prev, ...newRipples]);
+      setRipples((prev) => [...prev, ...newRipples]);
 
-		setTimeout(() => {
-			setRipples((prev) => prev.filter((r) => r.id < baseTime));
-		}, 800);
+      setTimeout(() => {
+        setRipples((prev) => prev.filter((r) => r.id < baseTime));
+      }, 1000);
 
-		// Call parent onClick if provided
-		if (onClick) onClick(e);
-	};
+      if (onClick) onClick(e);
+    };
 
-	return (
-		<Button
-			ref={ref}
-			variant='default'
-			className={`relative h-auto w-auto p-0 m-0 cursor-pointer ${className}`}
-			onClick={handleClick}
-			{...props}
-		>
-			{children}
-			<AnimatePresence>
-				{ripples.map((ripple) => (
-					<motion.span
-						key={ripple.id}
-						initial={{ scale: 0, opacity: 0.5 }}
-						animate={{ scale: rippleSpred ?? 2.8, opacity: 0 }}
-						exit={{ opacity: 0 }}
-						transition={{
-							duration: 0.5,
-							delay: ripple.delay,
-							ease: "easeOut",
-						}}
-						className='absolute pointer-events-none border border-foreground rounded-full w-4 h-4'
-						style={{
-							left: ripple.x - 8,
-							top: ripple.y - 8,
-						}}
-					/>
-				))}
-			</AnimatePresence>
-		</Button>
-	);
-});
+    return (
+      <Button
+        ref={ref}
+        variant={variant}
+        className={cn("relative overflow-hidden", className)}
+        onClick={handleClick}
+        {...props}
+      >
+        {children}
+        <AnimatePresence>
+          {ripples.map((ripple) => (
+            <motion.span
+              key={ripple.id}
+              initial={{ scale: 0, opacity: 0.5 }}
+              animate={{ scale: rippleSpread, opacity: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{
+                duration: rippleDuration,
+                delay: ripple.delay,
+                ease: "easeOut",
+              }}
+              className={cn(
+                "absolute pointer-events-none rounded-full border",
+                rippleColor
+              )}
+              style={{
+                width: rippleSize * 2,
+                height: rippleSize * 2,
+                left: ripple.x - rippleSize,
+                top: ripple.y - rippleSize,
+              }}
+            />
+          ))}
+        </AnimatePresence>
+      </Button>
+    );
+  }
+);
 
 export default RingWaveButton;
+

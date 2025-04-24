@@ -1,12 +1,11 @@
-
-
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import RingWaveButton from "./RippleRingButton";
+import { Card } from "./ui/card";
 
 const HeroSection = () => {
 	const videoCard = useRef(null);
-
+	const VideoCardElement = motion.create(Card)
 	// Scroll-based progress
 	const { scrollYProgress } = useScroll({
 		target: videoCard,
@@ -54,7 +53,7 @@ const HeroSection = () => {
 					initial='hidden'
 					animate='visible'
 					custom={0}
-					className='inline-block text-[12px] font-semibold bg-secondary px-3 py-1 rounded-full mybox-shadow mb-4'
+					className='inline-block text-[12px] font-semibold bg-secondary px-3 py-1 rounded-full  mb-4'
 				>
 					Trusted by{" "}
 					<span className='bg-gradient-to-br from-complement to-primary bg-clip-text text-transparent'>
@@ -103,44 +102,60 @@ const HeroSection = () => {
 					animate='visible'
 					custom={3}
 				>
-					<RingWaveButton>
 					<motion.div
+						className=' w-fit rounded-md mx-auto'
+						whileTap={{
+							scale: 0.99,
+						}}
 						whileHover={{
 							scale: 1.05,
-							boxShadow: "0 0 15px rgba(241, 158, 24, 0.5)",
 						}}
-						whileTap={{ scale: 0.95 }}
-						transition={{ duration: 0.3 }}
-						className='relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-foreground bg-gradient-to-r from-primary to-complement rounded-lg overflow-hidden shadow-lg focus:outline-none cursor-pointer'
+						transition={{
+							type: "spring",
+							stiffness: 300,
+							damping: 30,
+							mass: 1,
+						}}
 					>
-						<span className='relative z-10'>Check All Live Cohorts</span>
+						<RingWaveButton
+							rippleColor='border-foreground'
+							rippleSize={8}
+							rippleSpread={3}
+							rippleDuration={0.6}
+							rippleCount={2}
+							className='relative inline-flex items-center justify-center px-8 py-7 text-base font-bold font-Inter text-foreground bg-gradient-to-r from-primary to-complement rounded-lg overflow-hidden shadow-md focus:outline-none cursor-pointer'
+						>
+							<span className='relative z-10'>Check All Live Cohorts</span>
+						</RingWaveButton>
 					</motion.div>
-					</RingWaveButton>
-					
 				</motion.div>
 
-				{/* Embedded Video with Scroll-Based Scale */}
-				<motion.div
-  ref={videoCard}
-  initial={{ opacity: 0, y: 50 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{
-    duration: 1.2,
-    delay: 0.5,
-    ease: "easeOut",
-  }}
-  className="mt-15 "
->
-  <motion.div
-    style={{
-      scale, // Scale applied only to the video container
-    }}
-    className="aspect-video"
-  >
-    <iframe className=" w-full h-full rounded-2xl" src="https://www.youtube.com/embed/W43v7ePnjAA" title="Launching our platform and courses | Chai Code" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-  </motion.div>
-</motion.div>
-
+{/* video card  */}
+				
+					<VideoCardElement
+					ref={videoCard}
+					initial={{ opacity: 0, y: 50 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{
+						duration: 1.2,
+						delay: 0.5,
+						ease: "easeOut",
+					}}
+						style={{
+							scale,
+						}}
+						className='aspect-video shadow rounded-2xl overflow-hidden bg-accent m-0 p-0  mt-15 '
+					>
+						<iframe
+							className=' w-full h-full '
+							src='https://www.youtube.com/embed/W43v7ePnjAA'
+							title='Launching our platform and courses | Chai Code'
+							frameBorder='0'
+							allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+							referrerPolicy='strict-origin-when-cross-origin'
+							allowFullScreen
+						></iframe>
+					</VideoCardElement>
 			</div>
 		</section>
 	);

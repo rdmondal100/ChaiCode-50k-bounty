@@ -3,13 +3,17 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "./ui/button";
+import RingWaveButton from "./RippleRingButton";
 
 const ToggleTheme = React.forwardRef(({ theme, onToggle, ...props },ref) => {
+	
 	return (
-		<Button
+		<RingWaveButton
+			rippleColor="border-foreground"
+			rippleSize ={5}
 			ref={ref}
 			variant='icon'
-			className='bg-muted w-10 h-10 rounded-full relative overflow-hidden mybox-shadow border-border border cursor-pointer'
+			className='bg-muted w-10 h-10 rounded-full relative overflow-hidden shadow-md border-border border cursor-pointer'
 			onClick={onToggle}
 			{...props}
 		>
@@ -74,7 +78,7 @@ const ToggleTheme = React.forwardRef(({ theme, onToggle, ...props },ref) => {
 					</motion.div>
 				)}
 			</AnimatePresence>
-		</Button>
+		</RingWaveButton>
 	);
 })
 
