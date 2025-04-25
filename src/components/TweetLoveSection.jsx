@@ -31,7 +31,7 @@ const TweetLoveSection = () => {
 	}, []);
 
 	return (
-		<section className='pb-36 bg-background '>
+		<section className='pb-10 bg-background '>
 			<div className='mx-auto mt-20'>
 				<motion.div
 					className='flex flex-col items-center text-center font-Inter mb-12'
