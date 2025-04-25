@@ -1,5 +1,6 @@
 import HeroSection from "./components/HeroSection"
 import NavBar from "./components/NavBar"
+import StudentsCompanyInfo from "./components/StudentsCompanyInfo"
 import TweetLoveSection from "./components/TweetLoveSection"
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
     <NavBar/>
     <HeroSection/>
     <TweetLoveSection/>
-   
+    <StudentsCompanyInfo/>
     </>
   )
 }
