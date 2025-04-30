@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils"; 
 
-const RingWaveButton = React.forwardRef(
+const RippleRingButton = React.forwardRef(
   (
     {
       children,
@@ -86,5 +86,5 @@ const RingWaveButton = React.forwardRef(
   }
 );
 
-export default RingWaveButton;
+export default RippleRingButton;
 

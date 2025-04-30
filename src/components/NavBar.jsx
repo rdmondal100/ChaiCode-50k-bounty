@@ -6,7 +6,7 @@ import ToggleTheme from "./ToggleTheme";
 import { CHAICODE_CURRENT_THEME } from "@/lib/constant";
 import MobileNav from "./MobileNav";
 import { useOutsideClick } from "@/hooks/useClickOutside";
-import RingWaveButton from "./RippleRingButton";
+import RippleRingButton from "./RippleRingButton";
 
 const navItems = ["Cohorts", "Udemy", "Docs", "Reviews"];
 
@@ -19,7 +19,7 @@ const NavBar = () => {
 		}
 	});
 
-	const MotionToggleTheme = motion.create(ToggleTheme)
+	const MotionToggleTheme = motion.create(ToggleTheme);
 
 	const [hovered, setHovered] = useState(null);
 	const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -147,10 +147,10 @@ const NavBar = () => {
 							variants={buttonVariants}
 							whileHover='whileHover'
 							whileTap='whileTap'
-							transition={{ duration: 0.1, ease:"easeInOut" }}
+							transition={{ duration: 0.1, ease: "easeInOut" }}
 							className='rounded-md cursor-pointer'
 						>
-							<RingWaveButton
+							<RippleRingButton
 								variant='primary'
 								rippleColor='border-foreground'
 								rippleSpread={2.5}
@@ -158,7 +158,7 @@ const NavBar = () => {
 								className='bg-primary text-foreground cursor-pointer font-Inter bg-gradient-to-r from-primary to-complement shadow-md text-base px-4 py-3 sm:text-[12px] md:text-[16px] font-[500] border-0 hover:bg-accent hover:text-accent-foreground  '
 							>
 								Login
-							</RingWaveButton>
+							</RippleRingButton>
 						</motion.div>
 
 						{/* Theme Toggle */}

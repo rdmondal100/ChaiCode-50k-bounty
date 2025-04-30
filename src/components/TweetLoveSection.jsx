@@ -18,13 +18,13 @@ import { ArrowBigLeft, ArrowBigRight, TwitterIcon } from "lucide-react";
 import { Button } from "./ui/button.jsx";
 import { Tweet } from "react-tweet";
 import AnimatedWaveLine from "./AnimatedUnderLine.jsx";
-import RingWaveButton from "./RippleRingButton.jsx";
+import RippleRingButton from "./RippleRingButton.jsx";
 import MovingBorder from "./MovingBorder.jsx";
 
 const TweetLoveSection = () => {
 	const [tweetData, setTweetData] = useState([]);
 	const swiperRef = useRef(null);
-	const MotionRingWaveButton = motion.create(RingWaveButton);
+	const MotionRippleRingButton = motion.create(RippleRingButton);
 
 	useEffect(() => {
 		setTweetData(tweetPostIdFromServices);
@@ -133,7 +133,7 @@ const TweetLoveSection = () => {
 								whileHover={{ scale: 1.05 }}
 								className='prev-button'
 							>
-								<MotionRingWaveButton
+								<MotionRippleRingButton
 									rippleSize={5}
 									rippleColor='border-white'
 									variant='icon'
@@ -157,7 +157,7 @@ const TweetLoveSection = () => {
 										className='absolute inset-0 bg-primary rounded-full z-0'
 									/>
 									<ArrowBigLeft className='z-10 scale-110 text-foreground group-hover:text-white' />
-								</MotionRingWaveButton>
+								</MotionRippleRingButton>
 							</motion.div>
 
 							{/* Next Button */}
@@ -168,7 +168,7 @@ const TweetLoveSection = () => {
 								whileHover={{ scale: 1.05 }}
 								className='next-button'
 							>
-								<MotionRingWaveButton
+								<MotionRippleRingButton
 									rippleSize={5}
 									rippleColor='border-white'
 									variant='icon'
@@ -192,7 +192,7 @@ const TweetLoveSection = () => {
 										className='absolute inset-0 bg-primary rounded-full z-0'
 									/>
 									<ArrowBigRight className='z-10 scale-110 text-foreground group-hover:text-white' />
-								</MotionRingWaveButton>
+								</MotionRippleRingButton>
 							</motion.div>
 						</div>
 					</div>
@@ -200,36 +200,35 @@ const TweetLoveSection = () => {
 
 				{/* cta  */}
 				<div className='cta w-full flex justify-center mt-18'>
-				<MotionRingWaveButton
-  whileTap={{ scale: 0.99 }}
-  whileHover={{ scale: 1.02 }}
-  transition={{
-    type: "spring",
-    stiffness: 200,
-    damping: 25,
-    mass: 0.8,
-  }}
-  rippleColor='border-foreground'
-  rippleSize={8}
-  className='relative inline-flex items-center justify-center px-6 py-7 text-base font-semibold font-Inter text-foreground bg-secondary rounded-lg overflow-hidden shadow-md focus:outline-none cursor-pointer transition-colors duration-300 ease-in-out hover:bg-gradient-to-r from-primary to-complement hover:text-background border group'
->
-  {/* Smooth color transition */}
-  <motion.span
-    initial={{ opacity: 0 }}
-    whileHover={{ opacity: 0.1 }}
-    transition={{
-      duration: 0.4,
-      ease: "easeOut",
-    }}
-    className='absolute inset-0 bg-foreground z-0 rounded-lg pointer-events-none'
-  />
+					<MotionRippleRingButton
+						whileTap={{ scale: 0.99 }}
+						whileHover={{ scale: 1.02 }}
+						transition={{
+							type: "spring",
+							stiffness: 200,
+							damping: 25,
+							mass: 0.8,
+						}}
+						rippleColor='border-foreground'
+						rippleSize={8}
+						className='relative inline-flex items-center justify-center px-6 py-7 text-base font-semibold font-Inter text-foreground bg-secondary rounded-lg overflow-hidden shadow-md focus:outline-none cursor-pointer transition-colors duration-300 ease-in-out hover:bg-gradient-to-r from-primary to-complement hover:text-background border group'
+					>
+						{/* Smooth color transition */}
+						<motion.span
+							initial={{ opacity: 0 }}
+							whileHover={{ opacity: 0.1 }}
+							transition={{
+								duration: 0.4,
+								ease: "easeOut",
+							}}
+							className='absolute inset-0 bg-foreground z-0 rounded-lg pointer-events-none'
+						/>
 
-  {/* Text transition */}
-  <span className='relative z-10 bg-clip-text bg-gradient-to-br from-primary to-complement text-transparent group-hover:text-foreground font-bold text-lg'>
-    Join Cohorts Live Classes
-  </span>
-</MotionRingWaveButton>
-
+						{/* Text transition */}
+						<span className='relative z-10 bg-clip-text bg-gradient-to-br from-primary to-complement text-transparent group-hover:text-foreground font-bold text-lg'>
+							Join Cohorts Live Classes
+						</span>
+					</MotionRippleRingButton>
 				</div>
 			</div>
 		</section>

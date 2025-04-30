@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import RingWaveButton from "./RippleRingButton";
+import RippleRingButton from "./RippleRingButton";
 import { Card } from "./ui/card";
 
 const HeroSection = () => {
 	const videoCard = useRef(null);
-	const VideoCardElement = motion.create(Card)
+	const VideoCardElement = motion.create(Card);
 	// Scroll-based progress
 	const { scrollYProgress } = useScroll({
 		target: videoCard,
@@ -117,7 +117,7 @@ const HeroSection = () => {
 							mass: 1,
 						}}
 					>
-						<RingWaveButton
+						<RippleRingButton
 							rippleColor='border-foreground'
 							rippleSize={8}
 							rippleSpread={3}
@@ -126,13 +126,13 @@ const HeroSection = () => {
 							className='relative inline-flex items-center justify-center px-8 py-7 text-base font-bold font-Inter text-foreground bg-gradient-to-r from-primary to-complement rounded-lg overflow-hidden shadow-md focus:outline-none cursor-pointer'
 						>
 							<span className='relative z-10'>Check All Live Cohorts</span>
-						</RingWaveButton>
+						</RippleRingButton>
 					</motion.div>
 				</motion.div>
 
-{/* video card  */}
-				
-					<VideoCardElement
+				{/* video card  */}
+
+				<VideoCardElement
 					ref={videoCard}
 					initial={{ opacity: 0, y: 50 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -141,21 +141,21 @@ const HeroSection = () => {
 						delay: 0.5,
 						ease: "easeOut",
 					}}
-						style={{
-							scale,
-						}}
-						className='aspect-video shadow rounded-2xl overflow-hidden bg-accent m-0 p-0  mt-15 '
-					>
-						<iframe
-							className=' w-full h-full '
-							src='https://www.youtube.com/embed/W43v7ePnjAA'
-							title='Launching our platform and courses | Chai Code'
-							frameBorder='0'
-							allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-							referrerPolicy='strict-origin-when-cross-origin'
-							allowFullScreen
-						></iframe>
-					</VideoCardElement>
+					style={{
+						scale,
+					}}
+					className='aspect-video shadow rounded-2xl overflow-hidden bg-accent m-0 p-0  mt-15 '
+				>
+					<iframe
+						className=' w-full h-full '
+						src='https://www.youtube.com/embed/W43v7ePnjAA'
+						title='Launching our platform and courses | Chai Code'
+						frameBorder='0'
+						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+						referrerPolicy='strict-origin-when-cross-origin'
+						allowFullScreen
+					></iframe>
+				</VideoCardElement>
 			</div>
 		</section>
 	);
