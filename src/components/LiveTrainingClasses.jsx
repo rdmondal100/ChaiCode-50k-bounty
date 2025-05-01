@@ -26,8 +26,8 @@ const getSavePercent = (regular, discounted) => {
 };
 
 const LiveTrainingClasses = () => (
-	<section id='live-training-classes' className='py-16 px-4'>
-		<div className='max-w-7xl mx-auto'>
+	<section id='cohorts' className='xl:container xl:mx-auto py-16 px-4 md:px-6'>
+		<div className=' mx-auto'>
 			<div className='text-3xl font-extrabold text-center mb-8 font-Inter flex w-full justify-center '>
                 <div className="content relative w-fit">
                 <div className=" mb-3">

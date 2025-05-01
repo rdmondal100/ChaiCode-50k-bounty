@@ -13,7 +13,7 @@ import { useState } from "react";
 
 const Footer = () => {
 	return (
-		<footer className='relative   pt-12 px-6 sm:px-12 border border-primary rounded-t-3xl overflow-hidden'>
+		<footer className='relative xl:container xl:mx-auto   pt-12 px-6 sm:px-12 border border-primary rounded-t-3xl overflow-hidden'>
 			<div className='flex flex-col md:flex-row justify-between items-start gap-10 z-10 relative'>
 				{/* Left Side */}
 				<div className='space-y-4 max-w-sm'>
@@ -73,7 +73,7 @@ const Footer = () => {
 				</div>
 			</div>
 			{/* Background Big Text */}
-			<h1 className='relative text-[20vw] sm:text-[15vw] md:text-[12vw] font-bold text-transparent bg-gradient-to-b from-primary  to-background bg-clip-text  bottom-0 left-0 leading-none'>
+			<h1 className='relative text-center text-[3rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem] font-bold text-transparent bg-gradient-to-b from-primary  to-background bg-clip-text  bottom-0 left-0 leading-none'>
 				CHAIAURCODE
 			</h1>
 		</footer>

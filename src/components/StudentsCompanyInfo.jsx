@@ -107,7 +107,7 @@ const MarqueeTrack = ({ reverse = false, speed = 50 }) => {
 };
 
 const StudentsCompanyInfo = () => (
-  <section className="py-2 mx-auto container  overflow-x-hidden space-y-6">
+  <section className="py-2 xl:container xl:mx-auto  overflow-x-hidden space-y-6">
     <div className="text-center text-2xl md:text-[1.7rem] font-bold max-w-4xl mx-auto px-4 font-Inter">
       Our students are not only working in big tech companies but are now
       founders of funded startups and product creators

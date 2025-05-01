@@ -30,20 +30,8 @@ const HeroSection = () => {
 	};
 
 	return (
-		<section className='relative min-h-screen flex items-center justify-center px-4 md:px-6 bg-background overflow-hidden pt-24 py-10'>
-			{/* Glows */}
-			<motion.div
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 0.07 }}
-				transition={{ duration: 2 }}
-				className='absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-primary rounded-full blur-[120px] z-0'
-			/>
-			<motion.div
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 0.07 }}
-				transition={{ duration: 2, delay: 0.3 }}
-				className='absolute top-[-100px] right-[-100px] w-[300px] h-[300px] bg-complement rounded-full blur-[100px] z-0'
-			/>
+		<section className='relative min-h-screen xl:container xl:mx-auto flex items-center justify-center px-4 md:px-6 bg-background overflow-hidden pt-24 py-10'>
+			
 
 			{/* Content */}
 			<div className='relative z-10 container max-w-6xl mx-auto text-center font-Inter'>
