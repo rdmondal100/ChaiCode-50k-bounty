@@ -34,9 +34,9 @@ const StudentFeedback = () => {
 			</div>
 
 		<div className='columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 mx-auto block '>
-				{visibleTweets.map((id, idx) => (
+				{visibleTweets.map((tweetItem, idx) => (
 					<motion.div
-						key={id}
+						key={tweetItem?.id || idx}
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						whileHover="hover"
@@ -54,7 +54,7 @@ const StudentFeedback = () => {
 						<Card className='shadow-md student-feedback rounded-2xl bg-card p-0 overflow-hidden max-w-[500px]'>
 							<CardContent className='p-0 w-full overflow-hidden'>
 								<div data-theme='light' className='w-full m-0 p-0'>
-									<Tweet id={id} className='w-full' />
+									<Tweet id={tweetItem?.id} className='w-full' />
 								</div>
 							</CardContent>
 						</Card>

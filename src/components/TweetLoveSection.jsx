@@ -94,7 +94,7 @@ const TweetLoveSection = () => {
 							className='w-full  relative py-20 h-[520px]'
 							style={{ paddingTop: "20px" }}
 						>
-							{tweetData?.map((tweetId, index) => (
+							{tweetData?.map((tweetItem, index) => (
 								<SwiperSlide
 									key={index}
 									className='max-w-xs md:max-w-sm lg:max-w-md'
@@ -113,7 +113,7 @@ const TweetLoveSection = () => {
 												className='w-full h-[460px] px-2 py-0 overflow-y-auto custom-scrollbar [mask-image:linear-gradient(to_top,transparent_5%,black_30%)] pb-8'
 												data-theme='light'
 											>
-												<Tweet id={tweetId} />
+												<Tweet id={tweetItem?.id} />
 											</CardContent>
 										</Card>
 									</motion.div>
