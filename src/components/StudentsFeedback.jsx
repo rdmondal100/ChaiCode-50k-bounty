@@ -7,13 +7,11 @@ import { Badge } from "./ui/badge";
 import AnimatedWaveLine from "./AnimatedUnderLine";
 import { Button } from "@/components/ui/button";
 
-const TWEET_LIMIT = 5;
 
 const StudentFeedback = () => {
-	const [showAll, setShowAll] = useState(false);
 
-	const uniqueTweetIds = [...new Set(tweetPostIdFromServices)];
-	const visibleTweets = showAll ? uniqueTweetIds : uniqueTweetIds.slice(0, TWEET_LIMIT);
+	const featuredTweets = tweetPostIdFromServices?.filter((tweet)=>tweet?.featured)
+    console.log(featuredTweets)
 
 	return (
 		<section className='py-16  px-4 md:px-6 max-w-7xl xl:container xl:mx-auto'>
@@ -34,7 +32,7 @@ const StudentFeedback = () => {
 			</div>
 
 		<div className='columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 mx-auto block '>
-				{visibleTweets.map((tweetItem, idx) => (
+				{featuredTweets.map((tweetItem, idx) => (
 					<motion.div
 						key={tweetItem?.id || idx}
 						initial={{ opacity: 0, y: 20 }}
@@ -63,13 +61,13 @@ const StudentFeedback = () => {
 			</div> 
 
 			{/* View All Button */}
-			{!showAll && uniqueTweetIds.length > TWEET_LIMIT && (
+			                    
 				<div className='text-center mt-10'>
 					<Button onClick={() => setShowAll(true)} className='rounded-full px-6 py-2'>
 						View All
 					</Button>
 				</div>
-			)}
+			
 		</section>
 	);
 };
