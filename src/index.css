@@ -219,4 +219,18 @@
   transform: scale(1.1);
 }
 
+
+
 }
+
+@layer components {
+  .section-title {
+    @apply text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold tracking-tight 
+           text-foreground mb-3 font-Inter text-center;
+  }
+
+  .section-desc {
+    @apply text-base sm:text-lg text-muted-foreground max-w-4xl mx-auto text-center;
+  }
+}
+

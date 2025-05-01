@@ -22,14 +22,14 @@ import { getSavePercent } from "@/lib/utils";
 const LiveTrainingClasses = () => (
 	<section id='cohorts' className='xl:container xl:mx-auto py-16 px-4 md:px-6'>
 		<div className=' mx-auto'>
-			<div className='text-3xl font-extrabold text-center mb-8 font-Inter flex w-full justify-center '>
-                <div className="content relative w-fit">
-                <div className=" mb-3">
-                <h1 className='text-[43px] md:text-[72px] font-bold leading-tight '>Cohorts</h1>
-                <p className="text-[23px] md:text-[32px]">Live Training Classes</p>
-                </div>
-                <AnimatedWaveLine/>
-                </div>
+			<div className='text-3xl selection-heading text-center mb-8 font-Inter flex w-full justify-center flex-col items-center '>
+                <div className=" relative w-fit">
+                <h2 className=' section-title '>Cohorts</h2>
+				<AnimatedWaveLine/>
+
+				</div>
+
+                <p className="section-desc">Live Training Classes</p>
 				
 			</div>
 			<div className='grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>

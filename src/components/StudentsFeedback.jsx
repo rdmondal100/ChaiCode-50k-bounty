@@ -17,17 +17,17 @@ const StudentFeedback = () => {
 
 	return (
 		<section className='py-16  px-4 md:px-6 max-w-7xl xl:container xl:mx-auto'>
-			<div className='text-center mb-12 flex w-full justify-center flex-col items-center'>
+			<div className='text-center section-heading mb-12 flex w-full justify-center flex-col items-center'>
 				<Badge className='bg-primary/10 backdrop-blur-sm font-bold text-primary rounded-full px-2 py-1'>
 					Testimonials
 				</Badge>
 				<div className='relative mb-5'>
-					<h2 className='text-4xl font-extrabold w-fit text-foreground mb-3 flex gap-3'>
+					<h2 className='section-title'>
 						Our Students Feedback
 					</h2>
 					<AnimatedWaveLine />
 				</div>
-				<p className='text-muted-foreground text-lg max-w-2xl mx-auto'>
+				<p className='section-desc'>
 					Explore the incredible advantages of enrolling in our courses and
 					enhancing your skills.
 				</p>

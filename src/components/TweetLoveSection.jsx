@@ -34,19 +34,17 @@ const TweetLoveSection = () => {
 		<section className='pb-10 bg-background '>
 			<div className='mx-auto mt-20'>
 				<motion.div
-					className='flex flex-col items-center text-center font-Inter mb-12'
+					className=' section-heading flex flex-col items-center text-center font-Inter mb-12'
 					initial={{ opacity: 0, y: 40 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 				>
-					<p className='text-lg text-muted-foreground'>
-						Love that we get from our community
-					</p>
-
-					<h2 className='text-[43px] relative md:text-[72px] font-bold leading-tight'>
-						Tweet Love
+					<div className='relative w-fit'>
+						<h2 className='section-title'>Tweet Love</h2>
 						<AnimatedWaveLine />
-					</h2>
+					</div>
+
+					<p className='section-desc'>Love that we get from our community</p>
 				</motion.div>
 
 				<motion.div
