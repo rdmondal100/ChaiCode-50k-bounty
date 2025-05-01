@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { motion } from "framer-motion";
@@ -6,6 +6,18 @@ import { Card, CardContent, CardDescription, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { getCourseBadge, getSavePercent } from "@/lib/utils";
+import {
+	EffectCoverflow,
+	Autoplay,
+	Pagination,
+	Navigation,
+} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
+import RippleRingButton from "./RippleRingButton";
 
 const StarIcon = () => (
   <svg
@@ -31,7 +43,7 @@ const CourseCard = ({ title, subtitle, ytVideoCode, rating, regularPrice, discou
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
     >
-      <Card className='bg-card border border-border rounded-xl p-4 sm:p-6 text-foreground space-y-4 h-full flex flex-col md:flex-row justify-between w-full max-w-4xl shadow-sm'>
+      <Card className='bg-card border border-border rounded-xl p-4 sm:p-6 text-foreground space-y-4 h-full flex flex-col sm:flex-row justify-between w-full max-w-4xl shadow-sm'>
         <CardContent className='flex flex-col justify-between gap-4 w-full md:w-1/2'>
           <div>
             <CardTitle className='text-xl sm:text-2xl md:text-3xl font-bold mb-1'>{title}</CardTitle>
@@ -54,7 +66,7 @@ const CourseCard = ({ title, subtitle, ytVideoCode, rating, regularPrice, discou
             <div className="w-full aspect-video bg-background" dangerouslySetInnerHTML={{ __html: ytVideoCode }} />
           </div>
 
-          <div className='flex flex-col sm:flex-row items-center justify-between gap-2 px-5'>
+          <div className='flex  items-center justify-between gap-2 px-5'>
             <div className='price flex items-center gap-2'>
               <span className="text-base sm:text-lg font-bold">Price:</span>
               <span className='text-lg font-bold text-primary'>{discountedPrice}</span>
@@ -75,7 +87,7 @@ const CourseCard = ({ title, subtitle, ytVideoCode, rating, regularPrice, discou
           </div>
 
           <div className="cta px-5 pb-5">
-            <Button className='w-full'>Check on Udemy</Button>
+            <Button className='w-full cursor-pointer'>Check on Udemy</Button>
           </div>
         </CardContent>
       </Card>
@@ -84,6 +96,9 @@ const CourseCard = ({ title, subtitle, ytVideoCode, rating, regularPrice, discou
 };
 
 const UdemyCourses = () => {
+    const swiperRef = useRef(null);
+	const MotionRippleRingButton = motion.create(RippleRingButton);
+
   const courses = [
     {
       title: "Complete web development course",
@@ -120,16 +135,16 @@ const UdemyCourses = () => {
   ];
 
   return (
-    <section className='relative py-20'>
+    <section id="udemy" className='relative py-10 mb-10'>
      
-      <motion.h2
+      <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className='text-2xl sm:text-3xl md:text-4xl font-semibold text-center mb-1'
       >
         Udemy
-      </motion.h2>
+      </motion.h1>
 
       <p className='text-center text-sm sm:text-base mb-12'>
         Not only in India, we are
@@ -138,15 +153,34 @@ const UdemyCourses = () => {
       </p>
 
       <Swiper
-        effect='coverflow'
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView='auto'
-        spaceBetween={20}
-        loop={true}
-        autoplay={{ delay: 2500, disableOnInteraction: true }}
-        coverflowEffect={{ rotate: 0, stretch: 0, depth: 100, modifier: 2.5, slideShadows: false }}
-        pagination={{ clickable: true }}
+      modules={[EffectCoverflow, Autoplay, Pagination, Navigation]}
+      onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+      }}
+
+      effect='coverflow'
+      grabCursor={true}
+      centeredSlides={true}
+      slidesPerView='auto'
+      loop={courses.length > 4}
+      autoplay={{
+          delay: 3500,
+          disableOnInteraction: true,
+          pauseOnMouseEnter: true
+
+      }}
+      coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 2.5,
+          slideShadows: false,
+      }}
+      pagination={{
+        clickable: true,
+        el: ".custom-swiper-pagination",
+      }}      
+      style={{ paddingTop: "20px" }}
         className='px-2 sm:px-6'
       >
         {courses.map((course, idx) => (
@@ -155,6 +189,85 @@ const UdemyCourses = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      {/* navigation buttons  */}
+      <div className="navigations relative mt-10">
+
+					<div className='navigation absolute -bottom-10 flex items-center justify-center w-full z-20'>
+						<div className='buttonContainer flex gap-16'>
+							{/* Prev Button */}
+							<motion.div
+								initial={{ opacity: 0, scale: 0 }}
+								animate={{ opacity: 1, scale: 1 }}
+								whileTap={{ scale: 0.95 }}
+								whileHover={{ scale: 1.05 }}
+								className='prev-button'
+							>
+								<MotionRippleRingButton
+									rippleSize={5}
+									rippleColor='border-white'
+									variant='icon'
+									className='relative cursor-pointer bg-secondary rounded-full h-10 w-10 shadow-md overflow-hidden flex border items-center justify-center group '
+									onClick={() => swiperRef.current?.slidePrev()}
+									initial='rest'
+									whileHover='hover'
+									animate='rest'
+								>
+									<motion.span
+										variants={{
+											rest: { scale: 0, opacity: 0 },
+											hover: { scale: 2, opacity: 1 },
+										}}
+										transition={{
+											type: "spring",
+											stiffness: 100,
+											damping: 20,
+											mass: 1,
+										}}
+										className='absolute inset-0 bg-primary rounded-full z-0'
+									/>
+									<ArrowBigLeft className='z-10 scale-110 text-foreground group-hover:text-white' />
+								</MotionRippleRingButton>
+							</motion.div>
+                            <div className="custom-swiper-pagination mt-6 flex justify-center gap-2" />
+
+							{/* Next Button */}
+							<motion.div
+								initial={{ opacity: 0, scale: 0 }}
+								animate={{ opacity: 1, scale: 1 }}
+								whileTap={{ scale: 0.95 }}
+								whileHover={{ scale: 1.05 }}
+								className='next-button'
+							>
+								<MotionRippleRingButton
+									rippleSize={5}
+									rippleColor='border-white'
+									variant='icon'
+									className='relative cursor-pointer bg-secondary border rounded-full h-10 w-10 shadow-md overflow-hidden flex items-center justify-center group'
+									onClick={() => swiperRef.current?.slideNext()}
+									initial='rest'
+									whileHover='hover'
+									animate='rest'
+								>
+									<motion.span
+										variants={{
+											rest: { scale: 0, opacity: 0 },
+											hover: { scale: 2, opacity: 1 },
+										}}
+										transition={{
+											type: "spring",
+											stiffness: 100,
+											damping: 20,
+											mass: 1,
+										}}
+										className='absolute inset-0 bg-primary rounded-full z-0'
+									/>
+									<ArrowBigRight className='z-10 scale-110 text-foreground group-hover:text-white' />
+								</MotionRippleRingButton>
+							</motion.div>
+						</div>
+					</div>
+                    </div>
+
     </section>
   );
 };

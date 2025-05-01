@@ -202,4 +202,21 @@
   margin: 0!important;
   width: 100% !important;
 }
+
+
+.custom-swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background-color: var(--muted);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--primary);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
 }
