@@ -223,9 +223,11 @@ const UdemyCourses = () => {
 				))}
 			</Swiper>
 			{/* navigation buttons  */}
+      
 			<div className='navigations relative mt-10'>
-				<div className='navigation absolute -bottom-10 flex items-center justify-center w-full z-20'>
-					<div className='buttonContainer flex gap-16'>
+        <div className='custom-swiper-pagination mt-6 flex justify-center gap-2' />
+				<div className='navigation absolute -bottom-12 flex items-center justify-center w-full z-20'>
+					<div className='buttonContainer flex gap-40'>
 						{/* Prev Button */}
 						<motion.div
 							initial={{ opacity: 0, scale: 0 }}
@@ -260,7 +262,7 @@ const UdemyCourses = () => {
 								<ArrowBigLeft className='z-10 scale-110 text-foreground group-hover:text-white' />
 							</MotionRippleRingButton>
 						</motion.div>
-						<div className='custom-swiper-pagination mt-6 flex justify-center gap-2' />
+						
 
 						{/* Next Button */}
 						<motion.div
