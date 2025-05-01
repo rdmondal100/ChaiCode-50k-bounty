@@ -15,15 +15,9 @@ import { LiveClasses } from "@/data/LiveTrainingClassesData";
 import { CalendarDays, Clock } from "lucide-react";
 import RippleRingButton from "./RippleRingButton";
 import AnimatedWaveLine from "./AnimatedUnderLine";
+import { getSavePercent } from "@/lib/utils";
 
-const parseNumber = (price) => parseInt(price.replace(/[^0-9]/g, ""), 10);
-const getSavePercent = (regular, discounted) => {
-	const r = parseNumber(regular);
-	const d = parseNumber(discounted);
-	if (!r || !d) return null;
-	const percent = Math.round(((r - d) / r) * 100);
-	return `Save ${percent}%`;
-};
+
 
 const LiveTrainingClasses = () => (
 	<section id='cohorts' className='xl:container xl:mx-auto py-16 px-4 md:px-6'>
