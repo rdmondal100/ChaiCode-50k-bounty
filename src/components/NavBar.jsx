@@ -9,14 +9,13 @@ import { useOutsideClick } from "@/hooks/useClickOutside";
 import RippleRingButton from "./RippleRingButton";
 import { Link, NavLink } from "react-router-dom";
 
-
 const navItems = [
-	{ name: "Cohorts", link: "/#cohorts" , smooth:true },
-	{ name: "Udemy", link: "/#udemy", smooth:true },
-	{ name: "Docs", link: "https://docs.chaicode.com/", smooth:false },
-	{ name: "Reviews", link: "/reviews", smooth:false }
-  ];
-  
+	{ name: "Cohorts", link: "/#cohorts", smooth: true },
+	{ name: "Udemy", link: "/#udemy", smooth: true },
+	{ name: "Docs", link: "https://docs.chaicode.com/", smooth: false },
+	{ name: "Reviews", link: "/reviews", smooth: false },
+];
+
 const NavBar = () => {
 	const [theme, setTheme] = useState(() => {
 		try {
@@ -51,7 +50,7 @@ const NavBar = () => {
 		setTheme((prev) => (prev === "dark" ? "light" : "dark"));
 	};
 
-	// Scroll hide/reveal
+	// Scroll hide and show
 	useEffect(() => {
 		const handleScroll = () => {
 			const currentScrollY = window.scrollY;
@@ -99,12 +98,13 @@ const NavBar = () => {
 						transition={{ duration: 0.4 }}
 						className='cursor-pointer'
 					>
-						<NavLink to="/"><img
-							src={theme === "dark" ? whiteChaiCodeLogo : blackChaiCodeLogo}
-							alt='ChaiCode Logo'
-							className='w-[100px] md:w-[150px] h-auto'
-						/></NavLink>
-						
+						<NavLink to='/'>
+							<img
+								src={theme === "dark" ? whiteChaiCodeLogo : blackChaiCodeLogo}
+								alt='ChaiCode Logo'
+								className='w-[100px] md:w-[150px] h-auto'
+							/>
+						</NavLink>
 					</motion.div>
 
 					{/* Desktop Nav */}
@@ -119,8 +119,11 @@ const NavBar = () => {
 									onMouseLeave={() => setHovered(null)}
 									className='cursor-pointer group relative w-full flex justify-center items-center py-1.5 font-InterDisplay text-[12px] md:text-[16px] font-[400]'
 								>
-									{
-										item?.smooth ? (<a href={item?.link} className='relative z-20 group-hover:text-muted-foreground'>
+									{item?.smooth ? (
+										<a
+											href={item?.link}
+											className='relative z-20 group-hover:text-muted-foreground'
+										>
 											{item?.name}
 											{hovered === idx && (
 												<motion.span
@@ -137,26 +140,30 @@ const NavBar = () => {
 													className='absolute inset-0 top-6 w-auto h-[2px]  bg-gradient-to-r from-transparent via-primary to-transparent'
 												></motion.span>
 											)}
-										</a>): (<Link to={item?.link} className='relative z-20 group-hover:text-muted-foreground'>
-										{item?.name}
-										{hovered === idx && (
-											<motion.span
-												layoutId='hover-line'
-												initial={{ opacity: 0, y: 10 }}
-												animate={{ opacity: 1, y: 0 }}
-												exit={{ opacity: 0, y: -10 }}
-												transition={{
-													type: "spring",
-													stiffness: 300,
-													damping: 30,
-													mass: 0.8,
-												}}
-												className='absolute inset-0 top-6 w-auto h-[2px]  bg-gradient-to-r from-transparent via-primary to-transparent'
-											></motion.span>
-										)}
-									</Link>)
-									}
-									
+										</a>
+									) : (
+										<Link
+											to={item?.link}
+											className='relative z-20 group-hover:text-muted-foreground'
+										>
+											{item?.name}
+											{hovered === idx && (
+												<motion.span
+													layoutId='hover-line'
+													initial={{ opacity: 0, y: 10 }}
+													animate={{ opacity: 1, y: 0 }}
+													exit={{ opacity: 0, y: -10 }}
+													transition={{
+														type: "spring",
+														stiffness: 300,
+														damping: 30,
+														mass: 0.8,
+													}}
+													className='absolute inset-0 top-6 w-auto h-[2px]  bg-gradient-to-r from-transparent via-primary to-transparent'
+												></motion.span>
+											)}
+										</Link>
+									)}
 								</motion.div>
 							))}
 						</motion.nav>
@@ -177,15 +184,14 @@ const NavBar = () => {
 							transition={{ duration: 0.1, ease: "easeInOut" }}
 							className='rounded-md cursor-pointer'
 						>
-							<RippleRingButton
-								variant='primary'
-								rippleColor='border-foreground'
-								rippleSpread={2.5}
-								rippleSize={7}
-								className='bg-primary text-foreground cursor-pointer font-Inter bg-gradient-to-r from-primary to-complement shadow-md text-base px-4 py-3 sm:text-[12px] md:text-[16px] font-[500] border-0 hover:bg-accent hover:text-accent-foreground  '
-							>
-								Login
-							</RippleRingButton>
+							<a href='https://courses.chaicode.com/learn/account/signin'>
+								<Button
+									variant='primary'
+									className='bg-primary text-foreground cursor-pointer font-Inter bg-gradient-to-r from-primary to-complement shadow-md text-base px-4 py-3 sm:text-[12px] md:text-[16px] font-[500] border-0 hover:bg-accent hover:text-accent-foreground  '
+								>
+									Login
+								</Button>
+							</a>
 						</motion.div>
 
 						{/* Theme Toggle */}

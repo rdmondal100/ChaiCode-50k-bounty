@@ -2,20 +2,18 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import RippleRingButton from "./RippleRingButton";
 import { Card } from "./ui/card";
+import { Button } from "./ui/button";
 
 const HeroSection = () => {
 	const videoCard = useRef(null);
 	const VideoCardElement = motion.create(Card);
-	// Scroll-based progress
 	const { scrollYProgress } = useScroll({
 		target: videoCard,
 		offset: ["start end", "end start"],
 	});
 
-	// Smooth scale based on scroll
 	const scale = useTransform(scrollYProgress, [0, 1], [0.7, 1.2]);
 
-	// Text reveal animation
 	const textReveal = {
 		hidden: { opacity: 0, y: 30 },
 		visible: (i = 1) => ({
@@ -31,8 +29,6 @@ const HeroSection = () => {
 
 	return (
 		<section className='relative min-h-screen xl:container xl:mx-auto flex items-center justify-center px-4 md:px-6 bg-background overflow-hidden pt-24 py-10'>
-			
-
 			{/* Content */}
 			<div className='relative z-10 container max-w-6xl mx-auto text-center font-Inter'>
 				{/* Badge */}
@@ -105,16 +101,11 @@ const HeroSection = () => {
 							mass: 1,
 						}}
 					>
-						<RippleRingButton
-							rippleColor='border-foreground'
-							rippleSize={8}
-							rippleSpread={3}
-							rippleDuration={0.6}
-							rippleCount={2}
-							className='relative inline-flex items-center justify-center px-8 py-7 text-base font-bold font-Inter text-foreground bg-gradient-to-r from-primary to-complement rounded-lg overflow-hidden shadow-md focus:outline-none cursor-pointer'
-						>
-							<span className='relative z-10'>Check All Live Cohorts</span>
-						</RippleRingButton>
+						<a href='https://courses.chaicode.com/learn/view-all?show=batch&type=17'>
+							<Button className='relative inline-flex items-center justify-center px-8 py-7 text-base font-bold font-Inter text-foreground bg-gradient-to-r from-primary to-complement rounded-lg overflow-hidden shadow-md focus:outline-none cursor-pointer'>
+								<span className='relative z-10'>Check All Live Cohorts</span>
+							</Button>
+						</a>
 					</motion.div>
 				</motion.div>
 

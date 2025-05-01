@@ -112,7 +112,9 @@ const CourseCard = ({
 					</div>
 
 					<div className='cta px-5 pb-5'>
-						<Button className='w-full cursor-pointer'>Check on Udemy</Button>
+            <a href="https://hitesh.ai/udemy">
+            <Button className='w-full cursor-pointer'>Check on Udemy</Button>
+            </a>
 					</div>
 				</CardContent>
 			</Card>
