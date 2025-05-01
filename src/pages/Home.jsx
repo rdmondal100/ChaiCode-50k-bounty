@@ -5,6 +5,7 @@ import NavBar from "@/components/NavBar"
 import StudentsCompanyInfo from "@/components/StudentsCompanyInfo"
 import StudentFeedback from "@/components/StudentsFeedback"
 import TweetLoveSection from "@/components/TweetLoveSection"
+import UdemyCourses from "@/components/UdemyCourses"
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
     <StudentsCompanyInfo/>
     <LiveTrainingClasses/>
     <StudentFeedback/>
+    <UdemyCourses/>
     </>
   )
 }
