@@ -121,11 +121,7 @@ const UdemyCourses = () => {
 
   return (
     <section className='relative py-20'>
-      <div className='absolute left-4 top-6 sm:left-6 sm:top-10 text-xs sm:text-sm leading-tight'>
-        Sliders<br />as more courses are<br />on the way
-        <div className='border-l border-border h-8 sm:h-10 ml-2 mt-2' />
-      </div>
-
+     
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
