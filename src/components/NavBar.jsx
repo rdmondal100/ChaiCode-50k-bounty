@@ -7,9 +7,16 @@ import { CHAICODE_CURRENT_THEME } from "@/lib/constant";
 import MobileNav from "./MobileNav";
 import { useOutsideClick } from "@/hooks/useClickOutside";
 import RippleRingButton from "./RippleRingButton";
+import { Link, NavLink } from "react-router-dom";
 
-const navItems = ["Cohorts", "Udemy", "Docs", "Reviews"];
 
+const navItems = [
+	{ name: "Cohorts", link: "/#cohorts" , smooth:true },
+	{ name: "Udemy", link: "/#udemy", smooth:true },
+	{ name: "Docs", link: "https://docs.chaicode.com/", smooth:false },
+	{ name: "Reviews", link: "/reviews", smooth:false }
+  ];
+  
 const NavBar = () => {
 	const [theme, setTheme] = useState(() => {
 		try {
@@ -86,19 +93,19 @@ const NavBar = () => {
 			>
 				<div className='container flex items-center justify-between mx-auto'>
 					{/* Logo */}
-					<motion.a
+					<motion.div
 						initial={{ opacity: 0, x: -20 }}
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.4 }}
 						className='cursor-pointer'
-						href='#'
 					>
-						<img
+						<NavLink to="/"><img
 							src={theme === "dark" ? whiteChaiCodeLogo : blackChaiCodeLogo}
 							alt='ChaiCode Logo'
 							className='w-[100px] md:w-[150px] h-auto'
-						/>
-					</motion.a>
+						/></NavLink>
+						
+					</motion.div>
 
 					{/* Desktop Nav */}
 					<div className='hidden sm:block relative w-full'>
@@ -112,8 +119,26 @@ const NavBar = () => {
 									onMouseLeave={() => setHovered(null)}
 									className='cursor-pointer group relative w-full flex justify-center items-center py-1.5 font-InterDisplay text-[12px] md:text-[16px] font-[400]'
 								>
-									<motion.div className='relative z-20 group-hover:text-muted-foreground'>
-										{item}
+									{
+										item?.smooth ? (<a href={item?.link} className='relative z-20 group-hover:text-muted-foreground'>
+											{item?.name}
+											{hovered === idx && (
+												<motion.span
+													layoutId='hover-line'
+													initial={{ opacity: 0, y: 10 }}
+													animate={{ opacity: 1, y: 0 }}
+													exit={{ opacity: 0, y: -10 }}
+													transition={{
+														type: "spring",
+														stiffness: 300,
+														damping: 30,
+														mass: 0.8,
+													}}
+													className='absolute inset-0 top-6 w-auto h-[2px]  bg-gradient-to-r from-transparent via-primary to-transparent'
+												></motion.span>
+											)}
+										</a>): (<Link to={item?.link} className='relative z-20 group-hover:text-muted-foreground'>
+										{item?.name}
 										{hovered === idx && (
 											<motion.span
 												layoutId='hover-line'
@@ -129,7 +154,9 @@ const NavBar = () => {
 												className='absolute inset-0 top-6 w-auto h-[2px]  bg-gradient-to-r from-transparent via-primary to-transparent'
 											></motion.span>
 										)}
-									</motion.div>
+									</Link>)
+									}
+									
 								</motion.div>
 							))}
 						</motion.nav>
@@ -217,6 +244,7 @@ const NavBar = () => {
 						<MobileNav
 							ref={mobileNav}
 							navItems={navItems}
+							setIsOpenMenu={setIsOpenMenu}
 							onClose={() => setIsOpenMenu(false)}
 							className=''
 						/>
