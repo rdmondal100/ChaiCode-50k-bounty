@@ -2,7 +2,6 @@
 	{ id: "1904224504328733039", featured: true },
 	{ id: "1910405500635664554", featured: true },
 	{ id: "1910400980593574204", featured: true },
-	{ id: "1910371930860929195", featured: false },
 	{ id: "1904224504328733039", featured: false },
 	{ id: "1910405500635664554", featured: true },
 	{ id: "1910371930860929195", featured: false },

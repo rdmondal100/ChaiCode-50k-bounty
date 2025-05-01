@@ -6,6 +6,8 @@ import { tweetPostIdFromServices } from "@/data/tweetLoveData";
 import { Badge } from "./ui/badge";
 import AnimatedWaveLine from "./AnimatedUnderLine";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import RenderTweetsReview from "./RenderTweetsReview";
 
 
 const StudentFeedback = () => {
@@ -32,40 +34,25 @@ const StudentFeedback = () => {
 			</div>
 
 		<div className='columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 mx-auto block '>
-				{featuredTweets.map((tweetItem, idx) => (
-					<motion.div
-						key={tweetItem?.id || idx}
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						whileHover="hover"
-						variants={{
-							hover: { y: -2, scale: 0.989 },
-						}}
-						transition={{
-							type: "spring",
-							stiffness: 300,
-							damping: 30,
-							mass: 1,
-						}}
-						className='break-inside-avoid flex justify-center sm:block sm:mx-auto'
-					>
-						<Card className='shadow-md student-feedback rounded-2xl bg-card p-0 overflow-hidden max-w-[500px]'>
-							<CardContent className='p-0 w-full overflow-hidden'>
-								<div data-theme='light' className='w-full m-0 p-0'>
-									<Tweet id={tweetItem?.id} className='w-full' />
-								</div>
-							</CardContent>
-						</Card>
-					</motion.div>
-				))}
+				<RenderTweetsReview allTweets={featuredTweets}/>
 			</div> 
 
 			{/* View All Button */}
 			                    
-				<div className='text-center mt-10'>
-					<Button onClick={() => setShowAll(true)} className='rounded-full px-6 py-2'>
-						View All
-					</Button>
+				<div  className='flex justify-center mt-10 '>
+                    <motion.div
+                    whileHover={{
+                        scale:1.03
+                    }}
+                    whileTap={{
+                        scale: .988
+                    }}
+                     className=" w-fit">
+                    <Link to="/reviews" onClick={() => setShowAll(true)} className='rounded-md px-6 py-3 bg-primary text-foreground '>
+						View All Reviews
+					</Link>
+                    </motion.div>
+					
 				</div>
 			
 		</section>
