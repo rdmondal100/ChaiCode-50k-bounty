@@ -2,6 +2,7 @@ import AlumniNetwork from "@/components/AlumniNetwork"
 import BenefitsOfCohorts from "@/components/BenefitsOfCohorts"
 import CommunitySection from "@/components/CommunitySection"
 import Footer from "@/components/Footer"
+import FreeAPI from "@/components/FreeApi"
 import HeroSection from "@/components/HeroSection"
 import LiveTrainingClasses from "@/components/LiveTrainingClasses"
 import NavBar from "@/components/NavBar"
@@ -26,6 +27,7 @@ const Home = () => {
     <WhyChaiCode/>
     <TopicsCloud/>
     <CommunitySection/>
+    <FreeAPI/>
     </>
   )
 }

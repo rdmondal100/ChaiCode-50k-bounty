@@ -1,0 +1,79 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
+import AnimatedWaveLine from './AnimatedUnderLine';
+
+const FreeAPI = () => {
+  return (
+    <section className="py-20 px-6 md:px-10 xl:px-20 max-w-7xl mx-auto">
+
+        <div className='text-3xl selection-heading text-center mb-8 font-Inter flex w-full justify-center flex-col items-center '>
+                <div className=" relative w-fit">
+                <h2 className=' section-title '>FreeAPI</h2>
+				<AnimatedWaveLine/>
+
+				</div>
+
+                <p className="section-desc mt-5">Master you front-end knowledge with the FREEAPI</p>
+				
+			</div>
+
+      <div className="flex flex-col-reverse lg:flex-row justify-between items-center gap-5">
+        
+        {/* Left Side */}
+        <motion.div
+          className="lg:w-1/2 w-full space-y-6"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground w-full">
+            FreeAPI - Open Source
+          </h2>
+
+          <p className="text-2xl font-semibold text-foreground w-full">
+            Unlock Your Potential with Our API Hub
+          </p>
+
+          <p className="text-muted-foreground text-base md:text-lg leading-relaxed w-full">
+            Our API Hub is designed to streamline your learning experience in API handling across various programming languages.
+            With this resource, you can effortlessly build and showcase your front-end portfolio in both web and mobile applications.
+            Join us to enhance your skills and take your coding projects to the next level!
+          </p>
+
+          <Button
+            className="mt-6 px-6 py-3 h-fit text-lg font-semibold  text-primary font-Inter cursor-pointer"
+            variant="outline"
+          >
+            Check FreeAPI Docs
+          </Button>
+        </motion.div>
+
+        {/* Right Side */}
+        <motion.div
+          className="lg:w-1/2 w-full aspect-video rounded-xl overflow-hidden"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+        
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/DxedlhTyR7Q"
+                title="FreeAPI - Our open source project got an upgrade"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default FreeAPI;
