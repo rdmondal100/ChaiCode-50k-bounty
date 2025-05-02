@@ -1,3 +1,4 @@
+import AlumniNetwork from "@/components/AlumniNetwork"
 import BenefitsOfCohorts from "@/components/BenefitsOfCohorts"
 import Footer from "@/components/Footer"
 import HeroSection from "@/components/HeroSection"
@@ -18,6 +19,7 @@ const Home = () => {
     <StudentFeedback/>
     <UdemyCourses/>
     <BenefitsOfCohorts/>
+    <AlumniNetwork/>
     </>
   )
 }
