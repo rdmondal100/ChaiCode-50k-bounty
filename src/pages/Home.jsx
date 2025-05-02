@@ -1,3 +1,4 @@
+import BenefitsOfCohorts from "@/components/BenefitsOfCohorts"
 import Footer from "@/components/Footer"
 import HeroSection from "@/components/HeroSection"
 import LiveTrainingClasses from "@/components/LiveTrainingClasses"
@@ -16,6 +17,7 @@ const Home = () => {
     <LiveTrainingClasses/>
     <StudentFeedback/>
     <UdemyCourses/>
+    <BenefitsOfCohorts/>
     </>
   )
 }
