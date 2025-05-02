@@ -48,7 +48,7 @@ const StudentFeedback = () => {
                         scale: .988
                     }}
                      className=" w-fit">
-                    <Link to="/reviews" onClick={() => setShowAll(true)} className='rounded-md px-6 py-3 bg-primary text-foreground '>
+                    <Link to="/reviews" onClick={() => setShowAll(true)} className='relative inline-flex items-center justify-center px-8 py-3 text-base font-bold font-Inter text-foreground bg-gradient-to-r from-primary to-complement rounded-lg overflow-hidden shadow-md focus:outline-none cursor-pointer '>
 						View All Reviews
 					</Link>
                     </motion.div>
