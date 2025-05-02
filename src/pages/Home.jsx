@@ -6,8 +6,10 @@ import LiveTrainingClasses from "@/components/LiveTrainingClasses"
 import NavBar from "@/components/NavBar"
 import StudentsCompanyInfo from "@/components/StudentsCompanyInfo"
 import StudentFeedback from "@/components/StudentsFeedback"
+import TopicsCloud from "@/components/TopicsCloud"
 import TweetLoveSection from "@/components/TweetLoveSection"
 import UdemyCourses from "@/components/UdemyCourses"
+import WhyChaiCode from "@/components/WhyChaiCode"
 
 const Home = () => {
   return (
@@ -20,6 +22,8 @@ const Home = () => {
     <UdemyCourses/>
     <BenefitsOfCohorts/>
     <AlumniNetwork/>
+    <WhyChaiCode/>
+    <TopicsCloud/>
     </>
   )
 }
