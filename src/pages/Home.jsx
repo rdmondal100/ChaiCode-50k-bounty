@@ -1,5 +1,6 @@
 import AlumniNetwork from "@/components/AlumniNetwork"
 import BenefitsOfCohorts from "@/components/BenefitsOfCohorts"
+import CommunitySection from "@/components/CommunitySection"
 import Footer from "@/components/Footer"
 import HeroSection from "@/components/HeroSection"
 import LiveTrainingClasses from "@/components/LiveTrainingClasses"
@@ -24,6 +25,7 @@ const Home = () => {
     <AlumniNetwork/>
     <WhyChaiCode/>
     <TopicsCloud/>
+    <CommunitySection/>
     </>
   )
 }
