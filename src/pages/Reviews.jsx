@@ -9,12 +9,12 @@ const Reviews = () => {
             <div className='text-center mb-12 flex w-full justify-center flex-col items-center'>
 				
 				<div className='relative mb-5'>
-					<h2 className='text-4xl font-extrabold w-fit text-foreground mb-3 flex gap-3'>
+					<h2 className='text-4xl font-Inter font-extrabold w-fit text-foreground mb-3 flex gap-3'>
 						Our Students Feedback
 					</h2>
 					<AnimatedWaveLine />
 				</div>
-				<p className='text-muted-foreground text-lg max-w-2xl mx-auto'>
+				<p className='text-muted-foreground font-Inter text-lg max-w-2xl mx-auto'>
 					Explore the incredible advantages of enrolling in our courses and
 					enhancing your skills.
 				</p>

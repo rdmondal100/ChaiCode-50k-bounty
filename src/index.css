@@ -230,7 +230,7 @@
   }
 
   .section-desc {
-    @apply text-base sm:text-lg text-muted-foreground max-w-4xl mx-auto text-center;
+    @apply text-base sm:text-lg font-Inter text-muted-foreground max-w-4xl mx-auto text-center;
   }
 }
 

@@ -55,10 +55,10 @@ const CourseCard = ({
 			<Card className='bg-card border border-border rounded-xl p-4 sm:p-6 text-foreground space-y-4 h-full flex flex-col sm:flex-row justify-between w-full max-w-4xl shadow-sm'>
 				<CardContent className='flex flex-col justify-between gap-4 w-full md:w-1/2'>
 					<div>
-						<CardTitle className='text-xl sm:text-2xl md:text-3xl font-bold mb-1'>
+						<CardTitle className='text-xl font-Inter sm:text-2xl md:text-[1.7rem] font-bold mb-1'>
 							{title}
 						</CardTitle>
-						<CardDescription className='text-sm text-muted-foreground'>
+						<CardDescription className='text-sm font-Inter text-muted-foreground'>
 							{subtitle}
 						</CardDescription>
 					</div>
@@ -69,7 +69,7 @@ const CourseCard = ({
 							<span className='text-sm text-muted-foreground'>{rating}</span>
 						</div>
 						<span
-							className={`text-xs sm:text-sm px-2 py-1 rounded-md ${badge.color}`}
+							className={`text-xs sm:text-sm px-2 py-1 font-Inter rounded-md ${badge.color}`}
 						>
 							{badge.label}
 						</span>
@@ -86,11 +86,11 @@ const CourseCard = ({
 
 					<div className='flex  items-center justify-between gap-2 px-5'>
 						<div className='price flex items-center gap-2'>
-							<span className='text-base sm:text-lg font-bold'>Price:</span>
-							<span className='text-lg font-bold text-primary'>
+							<span className='text-base sm:text-lg font-bold font-Inter'>Price:</span>
+							<span className='text-lg font-bold text-primary font-Inter'>
 								{discountedPrice}
 							</span>
-							<span className='text-sm line-through text-muted-foreground'>
+							<span className='text-sm line-through text-muted-foreground font-Inter'>
 								{regularPrice}
 							</span>
 						</div>
@@ -103,7 +103,7 @@ const CourseCard = ({
 							>
 								<Badge
 									variant='outline'
-									className='bg-primary/10 text-primary backdrop-blur-sm'
+									className='bg-primary/10 font-Inter text-primary backdrop-blur-sm'
 								>
 									{getSavePercent(regularPrice, discountedPrice)}
 								</Badge>
@@ -113,7 +113,7 @@ const CourseCard = ({
 
 					<div className='cta px-5 pb-5'>
             <a href="https://hitesh.ai/udemy">
-            <Button className='w-full cursor-pointer'>Check on Udemy</Button>
+            <Button className='w-full cursor-pointer font-Inter font-semibold'>Check on Udemy</Button>
             </a>
 					</div>
 				</CardContent>

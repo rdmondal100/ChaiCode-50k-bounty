@@ -31,7 +31,7 @@ const Footer = () => {
 							className='w-[100px] md:w-[150px] h-auto hidden dark:block'
 						/>
 					</div>
-					<p className='text-sm text-muted-foreground'>Home for programmers</p>
+					<p className='text-sm text-muted-foreground font-Inter'>Home for programmers</p>
 
 					{/* Social Icons */}
 					<div className='flex gap-4 text-xl mt-2'>
@@ -43,14 +43,14 @@ const Footer = () => {
 						<Bot className='hover:text-violet-500 cursor-pointer' />
 					</div>
 
-					<p className='text-xs text-muted-foreground pt-4'>
+					<p className='text-xs text-muted-foreground pt-4 font-Inter'>
 						© 2024 Chaicode. All rights reserved.
 					</p>
 				</div>
 
 				{/* Right Side Links */}
 				<div className='grid grid-cols-2 gap-6 text-sm text-muted-foreground'>
-					<div className='space-y-2'>
+					<div className='space-y-2 font-Inter'>
 						<p className='font-semibold text-foreground'>Explore</p>
 						<ul className='space-y-1'>
 							<li>Courses</li>
@@ -60,7 +60,7 @@ const Footer = () => {
 							<li>Masterji</li>
 						</ul>
 					</div>
-					<div className='space-y-2'>
+					<div className='space-y-2 font-Inter'>
 						<p className='font-semibold text-foreground'>Legal</p>
 						<ul className='space-y-1'>
 							<li>Docs</li>
@@ -73,7 +73,7 @@ const Footer = () => {
 				</div>
 			</div>
 			{/* Background Big Text */}
-			<h1 className='relative text-center text-[3rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem] font-bold text-transparent bg-gradient-to-b from-primary  to-background bg-clip-text  bottom-0 left-0 leading-none'>
+			<h1 className='relative font-Inter text-center text-[3rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem] font-bold text-transparent bg-gradient-to-b from-primary  to-background bg-clip-text  bottom-0 left-0 leading-none'>
 				CHAIAURCODE
 			</h1>
 		</footer>

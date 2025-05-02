@@ -37,7 +37,7 @@ const HeroSection = () => {
 					initial='hidden'
 					animate='visible'
 					custom={0}
-					className='inline-block text-[12px] font-semibold bg-secondary px-3 py-1 rounded-full  mb-4'
+					className='inline-block font-Inter text-[12px] font-semibold bg-secondary px-3 py-1 rounded-full  mb-4'
 				>
 					Trusted by{" "}
 					<span className='bg-gradient-to-br from-complement to-primary bg-clip-text text-transparent'>

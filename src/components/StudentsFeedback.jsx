@@ -18,7 +18,7 @@ const StudentFeedback = () => {
 	return (
 		<section className='py-16  px-4 md:px-6 max-w-7xl xl:container xl:mx-auto'>
 			<div className='text-center section-heading mb-12 flex w-full justify-center flex-col items-center'>
-				<Badge className='bg-primary/10 backdrop-blur-sm font-bold text-primary rounded-full px-2 py-1'>
+				<Badge className='bg-primary/10 backdrop-blur-sm font-Inter font-bold text-primary rounded-full px-2 py-1'>
 					Testimonials
 				</Badge>
 				<div className='relative mb-5'>
