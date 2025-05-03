@@ -1,4 +1,5 @@
 import AlumniNetwork from "@/components/AlumniNetwork"
+import AppDownload from "@/components/AppDownload"
 import BenefitsOfCohorts from "@/components/BenefitsOfCohorts"
 import CommunitySection from "@/components/CommunitySection"
 import Footer from "@/components/Footer"
@@ -28,6 +29,7 @@ const Home = () => {
     <TopicsCloud/>
     <CommunitySection/>
     <FreeAPI/>
+    <AppDownload/>
     </>
   )
 }
