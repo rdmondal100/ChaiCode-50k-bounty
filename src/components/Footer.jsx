@@ -13,6 +13,18 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+	const listVariant = {
+		hidden: { opacity: 0, y: 20 },
+		visible: (i = 1) => ({
+			opacity: 1,
+			y: 0,
+			transition: {
+				delay: i * 0.1,
+				duration: 0.4,
+				ease: "easeOut",
+			},
+		}),
+	};
 	return (
 		<footer className='relative xl:container xl:mx-auto   pt-12 px-6 sm:px-12 border border-primary rounded-t-3xl overflow-hidden'>
 			<div className='flex flex-col md:flex-row justify-between items-start gap-10 z-10 relative'>
@@ -104,68 +116,67 @@ const Footer = () => {
 				</div>
 
 				{/* Right Side Links */}
-				<div className='grid grid-cols-2 gap-6 text-sm text-muted-foreground'>
+				<motion.div
+					className='grid grid-cols-2 gap-6 text-sm text-muted-foreground'
+					initial='hidden'
+					whileInView='visible'
+					viewport={{ once: true }}
+				>
 					<div className='space-y-2 font-Inter'>
 						<p className='font-semibold text-foreground'>Explore</p>
 						<ul className='space-y-1'>
-							<li>
-								{" "}
-								<a
-									href='https://courses.chaicode.com/learn'
-									className=' cursor-pointer'
+							{[
+								{
+									label: "Courses",
+									href: "https://courses.chaicode.com/learn",
+								},
+								{
+									label: "Cohort",
+									href: "https://courses.chaicode.com/learn/view-all?show=batch&type=17",
+								},
+								{
+									label: "Coding Hero",
+									href: "https://courses.chaicode.com/learn/batch/about?bundleId=226894",
+								},
+								{ label: "FreeAPI", href: "https://freeapi.app/" },
+								{ label: "Masterji", href: "https://masterji.co/" },
+							].map((item, index) => (
+								<motion.li
+									key={item.label}
+									custom={index}
+									variants={listVariant}
+									whileHover={{ scale: 1.05, x: 4 }}
+									className='cursor-pointer'
 								>
-									Courses{" "}
-								</a>{" "}
-							</li>
-							<li>
-								<a
-									href='https://courses.chaicode.com/learn/view-all?show=batch&type=17'
-									className=' cursor-pointer'
-								>
-									Cohort{" "}
-								</a>
-							</li>
-							<li>
-								<a
-									href='https://courses.chaicode.com/learn/batch/about?bundleId=226894'
-									className=' cursor-pointer'
-								>
-									Coding Hero{" "}
-								</a>
-							</li>
-							<li>
-								<a href='https://freeapi.app/' className=' cursor-pointer'>
-									FreeAPI{" "}
-								</a>
-							</li>
-							<li>
-								<a href='https://masterji.co/' className=' cursor-pointer'>
-									Masterji{" "}
-								</a>
-							</li>
+									<a href={item.href}>{item.label}</a>
+								</motion.li>
+							))}
 						</ul>
 					</div>
+
 					<div className='space-y-2 font-Inter'>
 						<p className='font-semibold text-foreground'>Legal</p>
 						<ul className='space-y-1'>
-							<li>
-								<Link to='/docs'>Docs</Link>
-							</li>
-							<li>
-								<Link to='/privacy-policy'>Privacy Policy</Link>
-							</li>
-							<li>
-								<Link to='/terms-of-services'>Terms of Service</Link>
-							</li>
-							<li>
-								<Link to='/pricing-policy'>Pricing Policy</Link>
-							</li>
-							<li>
-								<Link to='/refund-policy'>Refund Policy</Link>
-							</li>
+							{[
+								{ label: "Docs", to: "/docs" },
+								{ label: "Privacy Policy", to: "/privacy-policy" },
+								{ label: "Terms of Service", to: "/terms-of-services" },
+								{ label: "Pricing Policy", to: "/pricing-policy" },
+								{ label: "Refund Policy", to: "/refund-policy" },
+							].map((item, index) => (
+								<motion.li
+									key={item.label}
+									custom={index}
+									variants={listVariant}
+									whileHover={{ scale: 1.05, x: 4 }}
+									className='cursor-pointer'
+								>
+									<Link to={item.to}>{item.label}</Link>
+								</motion.li>
+							))}
 						</ul>
 					</div>
-				</div>
+				</motion.div>
 			</div>
 			{/* Background Big Text */}
 			<h1 className='relative font-Inter text-center text-[3rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem] font-bold text-transparent bg-gradient-to-b from-primary  to-background bg-clip-text  bottom-0 left-0 leading-none'>
