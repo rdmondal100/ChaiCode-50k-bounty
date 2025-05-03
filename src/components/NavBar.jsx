@@ -99,7 +99,6 @@ const NavBar = () => {
 						<NavLink
 							to='/'
 							onClick={(e) => {
-								e.preventDefault();
 								window.scrollTo({ top: 0, behavior: "smooth" });
 							}}
 						>
