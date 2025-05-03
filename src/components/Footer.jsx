@@ -38,14 +38,66 @@ const Footer = () => {
 
 					{/* Social Icons */}
 					<div className='flex gap-4 text-xl mt-2'>
-						<Youtube className='hover:text-red-500 cursor-pointer ' />
-						<Instagram className='hover:text-pink-500 cursor-pointer' />
-						<Github className='hover:text-gray-400 cursor-pointer' />
-						<Twitter className='hover:text-sky-400 cursor-pointer' />
-						<Linkedin className='hover:text-blue-500 cursor-pointer' />
-						<Bot className='hover:text-violet-500 cursor-pointer' />
-					</div>
+						<motion.a
+							href='https://www.youtube.com/@chaiaurcode'
+							rel='noopener noreferrer'
+							target='_blank'
+							whileHover={{ scale: 1.2 }}
+							whileTap={{ scale: 0.95 }}
+						>
+							<Youtube className='hover:text-red-500 cursor-pointer' />
+						</motion.a>
 
+						<motion.a
+							href='https://www.instagram.com/hiteshchoudharyofficial'
+							rel='noopener noreferrer'
+							target='_blank'
+							whileHover={{ scale: 1.2 }}
+							whileTap={{ scale: 0.95 }}
+						>
+							<Instagram className='hover:text-pink-500 cursor-pointer' />
+						</motion.a>
+
+						<motion.a
+							href='https://github.com/hiteshchoudhary'
+							rel='noopener noreferrer'
+							target='_blank'
+							whileHover={{ scale: 1.2 }}
+							whileTap={{ scale: 0.95 }}
+						>
+							<Github className='hover:text-gray-400 cursor-pointer' />
+						</motion.a>
+
+						<motion.a
+							href='https://x.com/Hiteshdotcom'
+							rel='noopener noreferrer'
+							target='_blank'
+							whileHover={{ scale: 1.2 }}
+							whileTap={{ scale: 0.95 }}
+						>
+							<Twitter className='hover:text-sky-400 cursor-pointer' />
+						</motion.a>
+
+						<motion.a
+							href='https://www.linkedin.com/in/hiteshchoudhary/'
+							rel='noopener noreferrer'
+							target='_blank'
+							whileHover={{ scale: 1.2 }}
+							whileTap={{ scale: 0.95 }}
+						>
+							<Linkedin className='hover:text-blue-500 cursor-pointer' />
+						</motion.a>
+
+						<motion.a
+							href='https://hitesh.ai/discord'
+							rel='noopener noreferrer'
+							target='_blank'
+							whileHover={{ scale: 1.2 }}
+							whileTap={{ scale: 0.95 }}
+						>
+							<Bot className='hover:text-violet-500 cursor-pointer' />
+						</motion.a>
+					</div>
 					<p className='text-xs text-muted-foreground pt-4 font-Inter'>
 						© 2024 Chaicode. All rights reserved.
 					</p>
