@@ -1,6 +1,7 @@
 import AlumniNetwork from "@/components/AlumniNetwork"
 import AppDownload from "@/components/AppDownload"
 import BenefitsOfCohorts from "@/components/BenefitsOfCohorts"
+import CollaborateAssignments from "@/components/CollaborateAssignments"
 import CommunitySection from "@/components/CommunitySection"
 import Footer from "@/components/Footer"
 import FreeAPI from "@/components/FreeApi"
@@ -30,6 +31,7 @@ const Home = () => {
     <CommunitySection/>
     <FreeAPI/>
     <AppDownload/>
+    <CollaborateAssignments/>
     </>
   )
 }
