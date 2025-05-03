@@ -24,7 +24,6 @@ export default function CommunitySection() {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-semibold leading-snug font-Inter text-center md:text-left">
             Join our <br className='md:block hidden'/>
@@ -39,7 +38,6 @@ export default function CommunitySection() {
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
         >
           <motion.div
             whileHover={{ scale: 1.05, rotate: 1 }}
@@ -63,12 +61,14 @@ export default function CommunitySection() {
           whileHover={{ scale: 1.05 }}
           transition={{ type: 'spring', stiffness: 250 }}
         >
+            <a href="https://hitesh.ai/discord">
           <Button
             variant="primary"
-            className="bg-gradient-to-t from-primary to-complement text-lg font-bold px-6 py-5 h-fit w-fit font-Inter"
+            className="bg-gradient-to-t from-primary to-complement text-lg font-bold px-6 py-5 h-fit w-fit font-Inter cursor-pointer"
           >
             80,000 Active <br /> coders in Discord
           </Button>
+          </a>
         </motion.div>
       </div>
     </section>

@@ -63,7 +63,6 @@ const BenefitsOfCohorts = () => {
               initial={{ opacity: 0, y: -10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
             >
               Key Benefits of Cohorts
             </motion.h2>
@@ -74,7 +73,6 @@ const BenefitsOfCohorts = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            viewport={{ once: true }}
           >
             Cohorts are the best way to learn—structured, time-bound, and community-powered.
           </motion.p>
@@ -89,7 +87,6 @@ const BenefitsOfCohorts = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.4 }}
-                viewport={{ once: true }}
                 className="h-full"
               >
                 <Card className="h-full shadow-md hover:shadow-lg transition-shadow duration-300">
