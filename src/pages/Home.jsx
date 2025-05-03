@@ -3,11 +3,9 @@ import AppDownload from "@/components/AppDownload"
 import BenefitsOfCohorts from "@/components/BenefitsOfCohorts"
 import CollaborateAssignments from "@/components/CollaborateAssignments"
 import CommunitySection from "@/components/CommunitySection"
-import Footer from "@/components/Footer"
 import FreeAPI from "@/components/FreeApi"
 import HeroSection from "@/components/HeroSection"
 import LiveTrainingClasses from "@/components/LiveTrainingClasses"
-import NavBar from "@/components/NavBar"
 import StudentsCompanyInfo from "@/components/StudentsCompanyInfo"
 import StudentFeedback from "@/components/StudentsFeedback"
 import TopicsCloud from "@/components/TopicsCloud"
@@ -29,7 +27,7 @@ const Home = () => {
     <WhyChaiCode/>
     <TopicsCloud/>
     <CommunitySection/>
-    <FreeAPI/>
+    <FreeAPI/> 
     <AppDownload/>
     <CollaborateAssignments/>
     </>
