@@ -17,10 +17,10 @@ export default function CommunitySection() {
       </div>
 
       {/* Content */}
-      <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-10">
+      <div className="flex flex-col-reverse md:flex-row  gap-10">
         {/* Left Side */}
         <motion.div
-          className=" md:w-1/2 flex  flex-col items-start"
+          className=" md:w-1/2 flex  flex-col items-center justify-center "
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
@@ -35,7 +35,7 @@ export default function CommunitySection() {
 
         {/* Right Side */}
         <motion.div
-          className="md:w-1/2 flex justify-center"
+          className="md:w-1/2 flex justify-center items-center"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
