@@ -54,7 +54,7 @@ const cardVariants = {
 
 const WhyChaiCode = () => {
   return (
-    <section className='py-16 px-4 md:px-10 bg-background text-foreground'>
+    <section className='xl:container xl:mx-auto py-16 px-4 md:px-6'>
       <div className='w-full flex justify-center items-center flex-col text-center pb-14'>
         <div className='relative w-fit'>
           <h2 className='section-title'>But Why ChaiCode ?</h2>

@@ -128,7 +128,7 @@ const AlumniNetwork = () => {
   }, []);
 
   return (
-    <section className="py-2 md:py-4 mb-10  mx-4 md:mx-10 ">
+    <section className="xl:container xl:mx-auto py-16 px-4 md:px-6 ">
       <Card className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-12">
         <div
           ref={boxRef}

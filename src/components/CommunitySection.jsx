@@ -6,7 +6,7 @@ import AnimatedWaveLine from './AnimatedUnderLine';
 
 export default function CommunitySection() {
   return (
-    <section className="py-16 px-4 md:px-6 max-w-7xl xl:container xl:mx-auto text-foreground">
+    <section className="xl:container xl:mx-auto py-16 px-4 md:px-6">
       {/* Heading */}
       <div className="w-full flex flex-col items-center justify-center mb-10">
         <div className="relative w-fit text-center">

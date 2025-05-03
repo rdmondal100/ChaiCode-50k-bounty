@@ -5,7 +5,7 @@ import AnimatedWaveLine from './AnimatedUnderLine';
 
 const FreeAPI = () => {
   return (
-    <section className="py-20 px-6 md:px-10 xl:px-20 xl-container xl:mx-auto">
+    <section className="xl:container xl:mx-auto py-16 px-4 md:px-6">
 
         <div className='text-3xl selection-heading text-center mb-8 font-Inter flex w-full justify-center flex-col items-center '>
                 <div className=" relative w-fit">

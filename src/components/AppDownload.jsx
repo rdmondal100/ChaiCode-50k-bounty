@@ -5,7 +5,7 @@ import { Layers, User, Zap } from "lucide-react";
 
 const AppDownload = () => {
   return (
-    <section className="xl:container xl:mx-auto mb-10">
+    <section className="xl:container xl:mx-auto py-16 px-4 md:px-6">
          {/* Heading */}
       <div className="w-full flex flex-col items-center justify-center mb-10">
         <div className="relative w-fit text-center">
