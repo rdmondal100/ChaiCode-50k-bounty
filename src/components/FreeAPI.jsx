@@ -1,4 +1,3 @@
-'use client';
 
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -6,11 +5,12 @@ import AnimatedWaveLine from './AnimatedUnderLine';
 
 const FreeAPI = () => {
   return (
-    <section className="py-20 px-6 md:px-10 xl:px-20 max-w-7xl mx-auto">
+    <section className="py-20 px-6 md:px-10 xl:px-20 xl-container xl:mx-auto">
 
         <div className='text-3xl selection-heading text-center mb-8 font-Inter flex w-full justify-center flex-col items-center '>
                 <div className=" relative w-fit">
-                <h2 className=' section-title '>FreeAPI</h2>
+                <h2 className=' section-title '>            FreeAPI - Open Source
+                </h2>
 				<AnimatedWaveLine/>
 
 				</div>
@@ -19,36 +19,35 @@ const FreeAPI = () => {
 				
 			</div>
 
-      <div className="flex flex-col-reverse lg:flex-row justify-between items-center gap-5">
+      <div className="flex flex-col-reverse lg:flex-row justify-between items-center gap-5 h-full ">
         
         {/* Left Side */}
         <motion.div
-          className="lg:w-1/2 w-full space-y-6"
+          className="lg:w-1/2 w-full h-full flex flex-col justify-between gap-5 items-start"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground w-full">
-            FreeAPI - Open Source
+          <h2 className="text-3xl md:text-4xl font-bold font-Inter tracking-tight text-foreground w-full">
+            Unlock Your Potential with Our API Hub
+
           </h2>
 
-          <p className="text-2xl font-semibold text-foreground w-full">
-            Unlock Your Potential with Our API Hub
-          </p>
-
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed w-full">
+          <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-Inter w-full">
             Our API Hub is designed to streamline your learning experience in API handling across various programming languages.
             With this resource, you can effortlessly build and showcase your front-end portfolio in both web and mobile applications.
             Join us to enhance your skills and take your coding projects to the next level!
           </p>
 
+<a href="https://api.freeapi.app/">
           <Button
             className="mt-6 px-6 py-3 h-fit text-lg font-semibold  text-primary font-Inter cursor-pointer"
             variant="outline"
           >
             Check FreeAPI Docs
           </Button>
+          </a>
         </motion.div>
 
         {/* Right Side */}
