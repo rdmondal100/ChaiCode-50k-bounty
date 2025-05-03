@@ -10,6 +10,7 @@ import {
 	Youtube,
 } from "lucide-react";
 import { useState } from "react";
+import { Link} from "react-router-dom";
 
 const Footer = () => {
 	return (
@@ -63,11 +64,11 @@ const Footer = () => {
 					<div className='space-y-2 font-Inter'>
 						<p className='font-semibold text-foreground'>Legal</p>
 						<ul className='space-y-1'>
-							<li>Docs</li>
-							<li>Privacy Policy</li>
-							<li>Terms of Service</li>
-							<li>Pricing Policy</li>
-							<li>Refund Policy</li>
+						<li><Link to="/docs">Docs</Link></li>
+	<li><Link to="/privacy-policy">Privacy Policy</Link></li>
+	<li><Link to="/terms-of-services">Terms of Service</Link></li>
+	<li><Link to="/pricing-policy">Pricing Policy</Link></li>
+	<li><Link to="/refund-policy">Refund Policy</Link></li>
 						</ul>
 					</div>
 				</div>
