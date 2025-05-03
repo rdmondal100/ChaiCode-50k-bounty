@@ -25,8 +25,6 @@ const NavBar = () => {
 		}
 	});
 
-	const MotionToggleTheme = motion.create(ToggleTheme);
-
 	const [hovered, setHovered] = useState(null);
 	const [isOpenMenu, setIsOpenMenu] = useState(false);
 	const [showNav, setShowNav] = useState(true);
@@ -98,7 +96,13 @@ const NavBar = () => {
 						transition={{ duration: 0.4 }}
 						className='cursor-pointer'
 					>
-						<NavLink to='/'>
+						<NavLink
+							to='/'
+							onClick={(e) => {
+								e.preventDefault();
+								window.scrollTo({ top: 0, behavior: "smooth" });
+							}}
+						>
 							<img
 								src={theme === "dark" ? whiteChaiCodeLogo : blackChaiCodeLogo}
 								alt='ChaiCode Logo'
