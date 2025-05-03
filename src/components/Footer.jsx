@@ -10,7 +10,7 @@ import {
 	Youtube,
 } from "lucide-react";
 import { useState } from "react";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
 	return (
@@ -32,7 +32,9 @@ const Footer = () => {
 							className='w-[100px] md:w-[150px] h-auto hidden dark:block'
 						/>
 					</div>
-					<p className='text-sm text-muted-foreground font-Inter'>Home for programmers</p>
+					<p className='text-sm text-muted-foreground font-Inter'>
+						Home for programmers
+					</p>
 
 					{/* Social Icons */}
 					<div className='flex gap-4 text-xl mt-2'>
@@ -54,21 +56,61 @@ const Footer = () => {
 					<div className='space-y-2 font-Inter'>
 						<p className='font-semibold text-foreground'>Explore</p>
 						<ul className='space-y-1'>
-							<li>Courses</li>
-							<li>Cohort</li>
-							<li>Coding Hero</li>
-							<li>FreeAPI</li>
-							<li>Masterji</li>
+							<li>
+								{" "}
+								<a
+									href='https://courses.chaicode.com/learn'
+									className=' cursor-pointer'
+								>
+									Courses{" "}
+								</a>{" "}
+							</li>
+							<li>
+								<a
+									href='https://courses.chaicode.com/learn/view-all?show=batch&type=17'
+									className=' cursor-pointer'
+								>
+									Cohort{" "}
+								</a>
+							</li>
+							<li>
+								<a
+									href='https://courses.chaicode.com/learn/batch/about?bundleId=226894'
+									className=' cursor-pointer'
+								>
+									Coding Hero{" "}
+								</a>
+							</li>
+							<li>
+								<a href='https://freeapi.app/' className=' cursor-pointer'>
+									FreeAPI{" "}
+								</a>
+							</li>
+							<li>
+								<a href='https://masterji.co/' className=' cursor-pointer'>
+									Masterji{" "}
+								</a>
+							</li>
 						</ul>
 					</div>
 					<div className='space-y-2 font-Inter'>
 						<p className='font-semibold text-foreground'>Legal</p>
 						<ul className='space-y-1'>
-						<li><Link to="/docs">Docs</Link></li>
-	<li><Link to="/privacy-policy">Privacy Policy</Link></li>
-	<li><Link to="/terms-of-services">Terms of Service</Link></li>
-	<li><Link to="/pricing-policy">Pricing Policy</Link></li>
-	<li><Link to="/refund-policy">Refund Policy</Link></li>
+							<li>
+								<Link to='/docs'>Docs</Link>
+							</li>
+							<li>
+								<Link to='/privacy-policy'>Privacy Policy</Link>
+							</li>
+							<li>
+								<Link to='/terms-of-services'>Terms of Service</Link>
+							</li>
+							<li>
+								<Link to='/pricing-policy'>Pricing Policy</Link>
+							</li>
+							<li>
+								<Link to='/refund-policy'>Refund Policy</Link>
+							</li>
 						</ul>
 					</div>
 				</div>
