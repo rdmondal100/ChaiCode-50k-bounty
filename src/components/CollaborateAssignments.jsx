@@ -15,6 +15,7 @@ const CollaborateAssignments = () => {
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
+					viewport={{ once: true }}
 				>
 					<Card className='bg-card backdrop-blur-sm border border-border/40'>
 						<CardContent className='p-6'>
@@ -57,6 +58,7 @@ const CollaborateAssignments = () => {
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.2 }}
+					viewport={{ once: true }}
 				>
 					<Card className='bg-card backdrop-blur-sm border border-border/40'>
 						<CardContent className='p-6'>

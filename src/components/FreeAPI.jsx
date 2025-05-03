@@ -27,6 +27,7 @@ const FreeAPI = () => {
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold font-Inter tracking-tight text-foreground w-full text-center lg:text-left">
             Unlock Your Potential with Our API Hub
@@ -59,6 +60,7 @@ const FreeAPI = () => {
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
         >
         
               <iframe

@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import RippleRingButton from "./RippleRingButton";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 

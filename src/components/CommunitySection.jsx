@@ -24,6 +24,7 @@ export default function CommunitySection() {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-semibold leading-snug font-Inter text-center md:text-left">
             Join our <br className='md:block hidden'/>
@@ -38,6 +39,7 @@ export default function CommunitySection() {
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         >
           <motion.div
             whileHover={{ scale: 1.05, rotate: 1 }}
